@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>登录</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding >
+
+  <ion-item>
+    <ion-label floating>用户名</ion-label>
+    <ion-input type="text" value="admin" #username></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>密码</ion-label>
+    <ion-input type="password" value="88888" #password></ion-input>
+  </ion-item>
+
+  <ion-item no-lines>
+    <label item-right>记住密码</label>
+    <ion-toggle></ion-toggle>
+  </ion-item>
+
+  <div padding>
+    <button ion-button block color="primary" (click)="_login(username, password)">登录</button>
+  </div>
+</ion-content>

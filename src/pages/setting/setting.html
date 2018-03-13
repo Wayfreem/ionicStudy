@@ -1,0 +1,32 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>设置</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-color">
+  <ion-list class="top-list">
+    <button ion-item [navPush]="userInfoPage">
+      <ion-avatar item-left><img src="../../assets/icon/user.jpg" height="244" width="253"/></ion-avatar>
+      <h2>Coding 的 Coder</h2>
+      <p>Wayfreem</p>
+    </button>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>控件1</ion-item>
+    <button ion-item>控件2</button>
+
+    <button ion-item><ion-icon name="alert"></ion-icon>控件3</button>
+  </ion-list>
+
+  <ion-list>
+    <button ion-item>版本号<span item-end>V1.0</span></button>
+    <button ion-item (click)="_navToAboutUs()">关于我们</button>
+  </ion-list>
+
+  <div padding>
+    <button ion-button block (click)="_logOut()">退出登录</button>
+  </div>
+</ion-content>
