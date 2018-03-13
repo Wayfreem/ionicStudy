@@ -7,4 +7,4 @@ git clone code or download zip to desktop
 npm `i` or `npm install`, download the package
 
 # step three
-ionic serve, run this app
+`ionic serve`, run this app
