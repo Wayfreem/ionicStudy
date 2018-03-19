@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
-import {ModalController, ToastController} from 'ionic-angular';
-import {TabsPage} from "../tabs/tabs";
+import { ModalController, ToastController} from 'ionic-angular';
+import { TabsPage} from "../tabs/tabs";
 
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
 export class LoginPage {
+
+  public isRemember: boolean = false;
+  public isShow: boolean = false;
+
+  iconStyle: object = {'color':'#488aff','font-size':'1.4em'};
 
   constructor(public modalCtrl: ModalController, public toastCtrl: ToastController) {
   }
@@ -27,7 +32,7 @@ export class LoginPage {
       return false;
     }
 
-    let data = {username: username.value, password: password.value};
+    let data = {username: username.value, password: password.value, remember: this.isRemember};
 
     // 界面跳转
     let modal = this.modalCtrl.create(TabsPage, data);
