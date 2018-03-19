@@ -19,7 +19,8 @@
 
   <ion-item no-lines>
     <ion-label>
-      <ion-icon [ios]="isShow ? 'ios-eye' : 'ios-eye-off'" md="md-eye"></ion-icon>
+      <!-- 控制字体图标的显示是由 ios 以及 md 两个属性控制的  -->
+      <ion-icon [ios]="isShow ? 'ios-eye' : 'ios-eye-off'" [md]="isShow ? 'md-eye' : 'md-eye-off'"></ion-icon>
     </ion-label>
     <ion-toggle checked="false" [(ngModel)]="isShow"></ion-toggle>
   </ion-item>
