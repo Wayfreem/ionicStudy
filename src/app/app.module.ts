@@ -11,6 +11,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {LoginPage} from "../pages/login/login";
+import {BackButtonService} from "../services/backButton.service";
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import {LoginPage} from "../pages/login/login";
   providers: [
     StatusBar,
     SplashScreen,
+    BackButtonService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
