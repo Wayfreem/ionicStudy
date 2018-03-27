@@ -16,7 +16,7 @@ npm `i` or `npm install`, download the package
 # step three
 `ionic serve`, run this app
 
-#打包的方式
+# 打包的方式
 
     step 1:
     ionic cordova platform add android  添加平台
@@ -30,7 +30,7 @@ npm `i` or `npm install`, download the package
     打包之后的文件地址  E:\work\jekun-tabs\platforms\android\build\outputs
 
 
-#使用keytool生成keystore文件 
+# 使用keytool生成keystore文件 
  keytool是JDK自带的加密工具，我们需要生成一个keystore文件，然后保存好，之后不需要每次都生成新的。
  
  命令行：
@@ -40,7 +40,7 @@ npm `i` or `npm install`, download the package
      keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
 
 
-#使用jarsigner签名 
+# 使用jarsigner签名 
 jarsigner是JDK自带的签名工具，我们需要将release版本的apk文件利用keystore文件进行加密，也就是签名，签名之后的apk才能发布到Android应用市场。
  
 运行命令行：
