@@ -1,9 +1,10 @@
 import {Component, ViewChild} from '@angular/core';
-import { AboutPage } from '../about/about';
-import { ContactPage } from '../contact/contact';
-import { HomePage } from '../home/home';
-import {NavParams, Platform, Tabs, ViewController} from "ionic-angular";
-import {BackButtonService} from "../../services/backButton.service";
+import {ContactPage} from '../contact/contact';
+import {MessagePage} from "../message/message";
+import {HomePage} from '../home/home';
+import {NavParams, Platform, Tabs, ViewController} from 'ionic-angular';
+import {BackButtonService} from '../../services/backButton.service';
+
 
 @Component({
   templateUrl: 'tabs.html'
@@ -13,7 +14,7 @@ export class TabsPage {
   @ViewChild('myTabs') tabRef: Tabs;
 
   tab1Root = HomePage;
-  tab2Root = AboutPage;
+  tab2Root = MessagePage;
   tab3Root = ContactPage;
   tab4Root = 'SettingPage';   // 使用懒加载
 
