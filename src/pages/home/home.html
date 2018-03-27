@@ -4,7 +4,18 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+
+  <!--头部滚动 -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" *ngFor="let item of headerSlideData">
+        <img  class="swiper-img" alt="{{item.alt}}" src="{{item.src}}">
+      </div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+  </div>
 
   <!-- 功能导航 -->
   <nav id="nav">
