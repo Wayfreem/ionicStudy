@@ -7,14 +7,16 @@
   <li>部分界面实现懒加载</li>
 </ul>
 
-# step one
-git clone code or download zip to desktop
+# 安装方式
+    
+    step 1：
+    git clone code or download zip to desktop
 
-# step two
-npm `i` or `npm install`, download the package
+    step 2：
+    npm `i` or `npm install`, download the package
 
-# step three
-`ionic serve`, run this app
+    step 3：
+    `ionic serve`, run this app
 
 # 打包的方式
 
@@ -48,3 +50,17 @@ jarsigner是JDK自带的签名工具，我们需要将release版本的apk文件�
 jarsigner -verbose -keystore [您的私钥存放路径] -signedjar [签名后文件存放路径] [未签名的文件路径] [您的证书的别名] 
 
 jarsigner -verbose -keystore my-release-key.keystore -signedjar complete.apk app-release-unsigned.apk alias_name
+
+
+# 常用的 ionic 命令
+    ionic generate [<type>] [<name>]
+    
+    // 生成组件
+    ionic generate component componentName
+    
+    // 生成不带有module的页面
+    ionic generate page Detail --no-module
+    
+    // 生成带有module的页面
+    ionic generate page Detail
+更多查看：https://ionicframework.com/docs/cli/generate/
