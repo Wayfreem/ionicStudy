@@ -6,29 +6,31 @@
 
 <ion-content padding>
 
-  <ion-item>
-    <ion-input type="text" value="admin" placeholder="用户名" #username></ion-input>
-    <ion-icon ios="ios-person" md="md-person" item-end [ngStyle]="iconStyle"></ion-icon>
-  </ion-item>
+  <ion-list>
+    <ion-item>
+      <ion-input type="text" value="admin" placeholder="用户名" #username></ion-input>
+      <ion-icon ios="ios-person" md="md-person" item-end [ngStyle]="iconStyle"></ion-icon>
+    </ion-item>
 
-  <ion-item>
-    <ion-input [type]="isShow ? 'text':'password'" value="88888" placeholder="密码" #password></ion-input>
-    <ion-icon ios="ios-key" md="md-key" item-end [ngStyle]="iconStyle"></ion-icon>
-  </ion-item>
+    <ion-item>
+      <ion-input [type]="isShow ? 'text':'password'" value="88888" placeholder="密码" #password></ion-input>
+      <ion-icon ios="ios-key" md="md-key" item-end [ngStyle]="iconStyle"></ion-icon>
+    </ion-item>
 
+    <ion-item no-lines>
+      <ion-label>
+        <!-- 控制字体图标的显示是由 ios 以及 md 两个属性控制的  -->
+        <ion-icon [ios]="isShow ? 'ios-eye' : 'ios-eye-off'" [md]="isShow ? 'md-eye' : 'md-eye-off'"></ion-icon>
+      </ion-label>
+      <ion-toggle checked="false" [(ngModel)]="isShow"></ion-toggle>
+    </ion-item>
 
-  <ion-item no-lines>
-    <ion-label>
-      <!-- 控制字体图标的显示是由 ios 以及 md 两个属性控制的  -->
-      <ion-icon [ios]="isShow ? 'ios-eye' : 'ios-eye-off'" [md]="isShow ? 'md-eye' : 'md-eye-off'"></ion-icon>
-    </ion-label>
-    <ion-toggle checked="false" [(ngModel)]="isShow"></ion-toggle>
-  </ion-item>
+    <ion-item no-lines>
+      <label item-left>记住密码</label>
+      <ion-toggle checked="false" [(ngModel)]="isRemember"></ion-toggle>
+    </ion-item>
 
-  <ion-item no-lines>
-    <label item-left>记住密码</label>
-    <ion-toggle checked="false" [(ngModel)]="isRemember"></ion-toggle>
-  </ion-item>
+  </ion-list>
 
   <div padding>
     <button ion-button block color="primary" (click)="_login(username, password)">登录</button>

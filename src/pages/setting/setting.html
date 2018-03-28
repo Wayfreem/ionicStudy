@@ -1,4 +1,3 @@
-
 <ion-header>
   <ion-navbar>
     <ion-title>设置</ion-title>
@@ -8,29 +7,63 @@
 <ion-content class="bg-color">
   <ion-list class="top-list">
     <button ion-item [navPush]="userInfoPage">
-      <ion-avatar item-left><img src="../../assets/icon/user.jpg" height="244" width="253"/></ion-avatar>
+      <ion-avatar item-left><img src="assets/img/user.jpg" height="244" width="253"/></ion-avatar>
       <h2>Coding 的 Coder</h2>
       <p>Wayfreem</p>
     </button>
   </ion-list>
 
   <ion-list>
-    <button ion-item>个人资料
+    <button ion-item>
+      个人资料
       <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
     </button>
-    <button ion-item>系统设置
-      <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
-    </button>
+    <button ion-item>系统设置</button>
 
     <button ion-item>
-      <ion-icon ios="ios-alert" md="md-alert"></ion-icon>说明
-      <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+      <ion-icon ios="ios-alert" md="md-alert"></ion-icon>
+      说明
     </button>
   </ion-list>
 
   <ion-list>
     <button ion-item>版本号<span item-end>V1.0</span></button>
     <button ion-item (click)="_navToAboutUs()">关于我们</button>
+  </ion-list>
+
+  <ion-list>
+    <!-- 滑动的控件 -->
+    <ion-item-sliding>
+
+      <!-- 显示的明细 -->
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/img/user.jpg">
+        </ion-avatar>
+        <h2>Slimer</h2>
+      </ion-item>
+
+      <!-- 滑动出来的按钮显示 -->
+      <ion-item-options side="left">
+        <button ion-button color="primary">
+          <ion-icon name="text"></ion-icon>
+          Text
+        </button>
+        <button ion-button color="secondary">
+          <ion-icon name="call"></ion-icon>
+          Call
+        </button>
+      </ion-item-options>
+
+      <!-- 滑动出来的按钮显示 -->
+      <ion-item-options side="right">
+        <button ion-button color="primary">
+          <ion-icon name="mail"></ion-icon>
+          Email
+        </button>
+      </ion-item-options>
+
+    </ion-item-sliding>
   </ion-list>
 
   <div padding>
