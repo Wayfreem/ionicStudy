@@ -7,15 +7,15 @@
 <ion-content>
 
   <!--头部滚动 -->
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide" *ngFor="let item of headerSlideData">
-        <img class="swiper-img" alt="{{item.alt}}" src="{{item.src}}">
-      </div>
-    </div>
-    <!-- 如果需要分页器 -->
-    <div class="swiper-pagination"></div>
-  </div>
+  <ion-slides pager class="swiper-container" loop="true" autoplay="3000">
+
+    <ion-slide class="swiper-wrapper" *ngFor="let item of headerSlideData">
+      <img class="swiper-img" alt="{{item.alt}}" src="{{item.src}}">
+    </ion-slide>
+
+  </ion-slides>
+
+
 
   <!-- 功能导航 -->
   <nav id="nav">
