@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import {ApprovalPage} from "../approval/approval";
 
 @Component({
   selector: 'page-home',
@@ -48,35 +49,60 @@ export class HomePage {
     return [
       {
         alt: "分类查询",
-        src: "assets/img/nav/nav0.png"
+        src: "assets/img/nav/nav0.png",
+        click: () => {
+          console.log("分类查询");
+        }
       },
       {
         alt: "物流查询",
-        src: "assets/img/nav/nav1.png"
+        src: "assets/img/nav/nav1.png",
+        click: () => {
+          console.log("物流查询");
+        }
       },
       {
         alt: "购物车",
-        src: "assets/img/nav/nav2.png"
+        src: "assets/img/nav/nav2.png",
+        click: () => {
+          console.log("购物车");
+        }
       },
       {
         alt: "我的京东",
-        src: "assets/img/nav/nav3.png"
+        src: "assets/img/nav/nav3.png",
+        click: () => {
+          console.log("我的京东");
+        }
       },
       {
         alt: "充值",
-        src: "assets/img/nav/nav4.png"
+        src: "assets/img/nav/nav4.png",
+        click: () => {
+          console.log("充值");
+        }
       },
       {
         alt: "领券中心",
-        src: "assets/img/nav/nav5.png"
+        src: "assets/img/nav/nav5.png",
+        click: () => {
+          console.log("分类查询");
+        }
       },
       {
-        alt: "生活团购",
-        src: "assets/img/nav/nav6.png"
+        alt: "我的审批",
+        src: "assets/img/nav/nav6.png",
+        click: () => {
+          this.navCtrl.push(ApprovalPage);
+
+        }
       },
       {
         alt: "我的关注",
-        src: "assets/img/nav/nav7.png"
+        src: "assets/img/nav/nav7.png",
+        click: () => {
+          console.log("我的关注");
+        }
       }
     ];
   }

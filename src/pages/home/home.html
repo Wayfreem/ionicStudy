@@ -8,18 +8,16 @@
 
   <!--头部滚动 -->
   <ion-slides pager class="swiper-container" loop="true" autoplay="3000">
-
     <ion-slide class="swiper-wrapper" *ngFor="let item of headerSlideData">
       <img class="swiper-img" alt="{{item.alt}}" src="{{item.src}}">
     </ion-slide>
-
   </ion-slides>
 
 
   <!-- 功能导航 -->
   <nav id="nav">
       <span *ngFor="let list of navData;">
-        <img src="{{list.src}}" alt="{{list.alt}}">
+        <img src="{{list.src}}" alt="{{list.alt}}" (click)="list.click()">
         <h2>{{list.alt}}</h2>
       </span>
   </nav>

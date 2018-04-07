@@ -30,7 +30,7 @@
     ionic cordova build android --prod --release	生产环境
   
     step 3:
-    打包之后的文件地址  E:\work\jekun-tabs\platforms\android\build\outputs
+    打包之后的文件地址  yourProjectName\platforms\android\app\build\outputs\apk
 
 
 # 使用keytool生成keystore文件 
