@@ -12,6 +12,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import {LoginPage} from "../pages/login/login";
 import {BackButtonService} from "../services/backButton.service";
 import {MessagePageModule} from "../pages/message/message.module";
+import {ApprovalPageModule} from "../pages/approval/approval.module";
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {MessagePageModule} from "../pages/message/message.module";
   imports: [
     // 自定义模块
     MessagePageModule,
+    ApprovalPageModule,
 
     BrowserModule,
     // IonicModule.forRoot(MyApp)
