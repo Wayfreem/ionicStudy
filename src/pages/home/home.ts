@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {ApprovalPage} from "../approval/approval";
 
 @Component({
   selector: 'page-home',
