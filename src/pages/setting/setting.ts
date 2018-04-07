@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
 import {LoginPage} from "../login/login";
+import {ApprovalPage} from "../approval/approval";
 
 @IonicPage()
 @Component({
@@ -33,6 +34,10 @@ export class SettingPage {
       }
     };
     this.navCtrl.push(this.modalPage, data);
+  }
+
+  _navToApproval(){
+    this.navCtrl.push(ApprovalPage);
   }
 
 }

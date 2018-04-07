@@ -37,43 +37,13 @@
       <button ion-item>版本号<span item-end>V1.0</span></button>
       <button ion-item (click)="_navToAboutUs()">关于我们</button>
     </ion-list>
-
-    <ion-list>
-      <!-- 滑动的控件 -->
-      <ion-item-sliding>
-
-        <!-- 显示的明细 -->
-        <ion-item>
-          <ion-avatar item-start>
-            <img src="assets/img/user.jpg">
-          </ion-avatar>
-          <h2>Slimer</h2>
-        </ion-item>
-
-        <!-- 滑动出来的按钮显示 -->
-        <ion-item-options side="left">
-          <button ion-button color="primary">
-            <ion-icon name="text"></ion-icon>
-            Text
-          </button>
-          <button ion-button color="secondary">
-            <ion-icon name="call"></ion-icon>
-            Call
-          </button>
-        </ion-item-options>
-
-        <!-- 滑动出来的按钮显示 -->
-        <ion-item-options side="right">
-          <button ion-button color="primary">
-            <ion-icon name="mail"></ion-icon>
-            Email
-          </button>
-        </ion-item-options>
-
-      </ion-item-sliding>
-    </ion-list>
   </ion-card>
 
+  <ion-card>
+    <ion-list>
+      <button ion-item (click)="_navToApproval()">二级Tab页面</button>
+    </ion-list>
+  </ion-card>
 
   <div padding>
     <button ion-button block (click)="_logOut()">退出登录</button>

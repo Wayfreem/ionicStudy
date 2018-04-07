@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {AlertController, IonicPage, NavController, NavParams} from 'ionic-angular';
 
 /**
  * Generated class for the ApprovalTodoPage page.
@@ -15,11 +15,30 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ApprovalTodoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  dept: any;
+
+  dateTime = {
+    startTime: "",
+    endTime: ""
+  };
+
+  deptList = [
+    {value: 1, label:"ERP项目组"},
+    {value: 2, label:"IT运维组"},
+    {value: 3, label:"APP研发组"},
+    {value: 4, label:"HR组"},
+  ];
+
+  constructor(public navCtrl: NavController, public alerCtrl: AlertController) {
+
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ApprovalTodoPage');
+  _submit(){
+    let alert = this.alerCtrl.create({
+      title: '提示消息',
+      message: '提交成功!',
+      buttons: ['确认']
+    });
+    alert.present()
   }
-
 }

@@ -93,8 +93,7 @@ export class HomePage {
         alt: "我的审批",
         src: "assets/img/nav/nav6.png",
         click: () => {
-          this.navCtrl.push(ApprovalPage);
-
+          console.log("我的审批");
         }
       },
       {

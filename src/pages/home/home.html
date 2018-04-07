@@ -16,8 +16,8 @@
 
   <!-- 功能导航 -->
   <nav id="nav">
-      <span *ngFor="let list of navData;">
-        <img src="{{list.src}}" alt="{{list.alt}}" (click)="list.click()">
+      <span *ngFor="let list of navData;" (click)="list.click()">
+        <img src="{{list.src}}" alt="{{list.alt}}" >
         <h2>{{list.alt}}</h2>
       </span>
   </nav>

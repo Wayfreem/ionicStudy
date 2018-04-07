@@ -1,75 +1,80 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      联系人
-    </ion-title>
+    <ion-title>联系人</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
 
   <ion-card>
+    <ion-card-header>常用联系人</ion-card-header>
+
     <ion-list>
+      <!-- 滑动的控件 -->
+      <ion-item-sliding>
 
-      <ion-list-header>
-        <div>请假说明：</div>
-        <div>法定节假日：1月1日。</div>
-        <div>婚假：结婚之后的7天。</div>
-        <div>事假：请假当天开始算。</div>
-        <div>病假：不允许请病假。</div>
-      </ion-list-header>
+        <!-- 显示的明细 -->
+        <ion-item>
+          <ion-avatar item-start><img src="assets/img/user.jpg"></ion-avatar>
+          <h2>Me</h2>
+        </ion-item>
 
-      <ion-item-divider></ion-item-divider>
+        <!-- 滑动出来的按钮显示 -->
+        <ion-item-options side="left">
+          <button ion-button color="primary">
+            <ion-icon name="text"></ion-icon>
+            消息
+          </button>
+          <button ion-button color="secondary">
+            <ion-icon name="call"></ion-icon>
+            电话
+          </button>
+        </ion-item-options>
 
-      <ion-item>
-        <ion-label>所属部门</ion-label>
-        <ion-select [(ngModel)]="dept" multiple="true" cancelText="取消" okText="确认">
-          <!--<ion-option value="">请选择部门</ion-option>-->
-          <ion-option *ngFor="let list of deptList;" [value]="list.value">{{list.label}}</ion-option>
-        </ion-select>
-      </ion-item>
+        <!-- 滑动出来的按钮显示 -->
+        <ion-item-options side="right">
+          <button ion-button color="primary">
+            <ion-icon name="mail"></ion-icon>
+            邮件
+          </button>
+        </ion-item-options>
 
-      <ion-item>
-        <ion-label>开始时间</ion-label>
-        <ion-icon ios="ios-arrow-dropdown" md="md-arrow-dropdown" item-end></ion-icon>
-        <ion-datetime displayFormat="YYYY-MM-DD HH:mm" [(ngModel)]="dateTime.startTime"></ion-datetime>
-      </ion-item>
+      </ion-item-sliding>
+    </ion-list>
 
-      <ion-item>
-        <ion-label>结束时间</ion-label>
-        <ion-icon ios="ios-arrow-dropdown" md="md-arrow-dropdown" item-end></ion-icon>
-        <ion-datetime displayFormat="YYYY-MM-DD HH:mm" [(ngModel)]="dateTime.endTime">
-        </ion-datetime>
-      </ion-item>
 
-      <ion-item>
-        <ion-label>时长 (天)</ion-label>
-        <ion-input type="number" placeholder="Text Input"></ion-input>
-      </ion-item>
+    <ion-list *ngFor="let contact of contactList;">
+      <ion-item-sliding>
 
-      <ion-item>
-        <ion-label>请假原因</ion-label>
-        <ion-input type="text" placeholder="Text Input"></ion-input>
-      </ion-item>
+        <ion-item>
+          <ion-avatar item-start><img [src]="contact.src"></ion-avatar>
+          <h2>{{contact.name}}</h2>
+        </ion-item>
 
-      <ion-item>
-        <label>备注</label>
-        <div>
-          <textarea placeholder="请输入备注" style="width:100%; hight: 30px"></textarea>
-        </div>
-      </ion-item>
+        <ion-item-options side="left">
+          <button ion-button color="primary">
+            <ion-icon name="text"></ion-icon>
+            消息
+          </button>
+          <button ion-button color="secondary">
+            <ion-icon name="call"></ion-icon>
+            电话
+          </button>
+        </ion-item-options>
 
+        <ion-item-options side="right">
+          <button ion-button color="primary">
+            <ion-icon name="mail"></ion-icon>
+            邮件
+          </button>
+        </ion-item-options>
+
+      </ion-item-sliding>
     </ion-list>
   </ion-card>
 
   <ion-card>
-    <ion-list>
-
-    </ion-list>
+    <ion-card-header>联系人</ion-card-header>
   </ion-card>
-
-  <div padding>
-    <button ion-button block (click)="_submit()">提交</button>
-  </div>
 
 </ion-content>
