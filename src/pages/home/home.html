@@ -13,7 +13,6 @@
     </ion-slide>
   </ion-slides>
 
-
   <!-- 功能导航 -->
   <nav id="nav">
       <span *ngFor="let list of navData;" (click)="list.click()">
@@ -21,4 +20,22 @@
         <h2>{{list.alt}}</h2>
       </span>
   </nav>
+
+  <!-- 精品推荐 -->
+  <div class="floor">
+    <div class="floor-title">精品推荐</div>
+  </div>
+  <div class="floor-detail">
+    <!--外层的ion-scroll 100%   里面元素的宽度要大于100%-->
+    <ion-scroll scrollX="true">
+      <ul class="clearfix" [ngStyle]="{'width':recListWidth}">
+        <li *ngFor="let item of recommendList">
+
+          <img src="{{item.pic}}" />
+          <p>{{item.title}}</p>
+        </li>
+      </ul>
+    </ion-scroll>
+  </div>
+
 </ion-content>

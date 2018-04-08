@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {AlertController, IonicPage, NavController, NavParams} from 'ionic-angular';
+import {AlertController, IonicPage, NavController} from 'ionic-angular';
 
 /**
  * Generated class for the ApprovalTodoPage page.

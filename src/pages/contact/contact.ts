@@ -20,23 +20,23 @@ export class ContactPage {
   getContactData(){
     return [
       {
-        src: "assets/img/temp/tortoise.png",
+        src: "assets/img/contact/tortoise.png",
         name: "马爸爸",
       },
       {
-        src: "assets/img/temp/tortoise.png",
+        src: "assets/img/contact/tortoise.png",
         name: "老罗",
       },
       {
-        src: "assets/img/temp/tortoise.png",
+        src: "assets/img/contact/tortoise.png",
         name: "脱不花",
       },
       {
-        src: "assets/img/temp/tortoise.png",
+        src: "assets/img/contact/tortoise.png",
         name: "李笑来",
       },
       {
-        src: "assets/img/temp/tortoise.png",
+        src: "assets/img/contact/tortoise.png",
         name: "吴军",
       },
     ];

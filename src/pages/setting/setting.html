@@ -6,44 +6,38 @@
 
 <ion-content class="bg-color">
 
-  <ion-card>
-    <ion-list class="top-list">
-      <button ion-item [navPush]="userInfoPage">
-        <ion-avatar item-left><img src="assets/img/user.jpg" height="244" width="253"/></ion-avatar>
-        <h2>Coding 的 Coder</h2>
-        <p>Wayfreem</p>
-      </button>
-    </ion-list>
+  <ion-list class="top-list">
+    <button ion-item [navPush]="userInfoPage">
+      <ion-avatar item-left><img src="assets/img/user.jpg" height="244" width="253"/></ion-avatar>
+      <h2>Coding 的 Coder</h2>
+      <p>Wayfreem</p>
+    </button>
 
-  </ion-card>
+    <ion-item-divider></ion-item-divider>
 
-  <ion-card>
-    <ion-list>
-      <button ion-item>
-        个人资料
-        <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
-      </button>
-      <button ion-item>系统设置</button>
+    <button ion-item>
+      个人资料
+      <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+    </button>
+    <button ion-item>系统设置</button>
 
-      <button ion-item>
-        <ion-icon ios="ios-alert" md="md-alert"></ion-icon>
-        说明
-      </button>
-    </ion-list>
-  </ion-card>
+    <ion-item-divider></ion-item-divider>
 
-  <ion-card>
-    <ion-list>
-      <button ion-item>版本号<span item-end>V1.0</span></button>
-      <button ion-item (click)="_navToAboutUs()">关于我们</button>
-    </ion-list>
-  </ion-card>
+    <button ion-item>版本号<span item-end>V1.0</span></button>
+    <button ion-item (click)="_navToAboutUs()">关于我们</button>
+    <button ion-item>
+      <ion-icon ios="ios-alert" md="md-alert"></ion-icon>
+      说明
+    </button>
+    <ion-item>
+      <ion-icon name="ios-people-outline" item-start></ion-icon>
+      <span>在线客服</span>
+    </ion-item>
 
-  <ion-card>
-    <ion-list>
-      <button ion-item (click)="_navToApproval()">二级Tab页面</button>
-    </ion-list>
-  </ion-card>
+    <ion-item-divider></ion-item-divider>
+
+    <button ion-item (click)="_navToApproval()">二级Tab页面</button>
+  </ion-list>
 
   <div padding>
     <button ion-button block (click)="_logOut()">退出登录</button>

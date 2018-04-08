@@ -10,6 +10,10 @@ export class HomePage {
   public headerSlideData = [];
   public navData = [];
 
+  // 精品推荐
+  recListWidth = '';
+  recommendList=[];
+
   constructor(public navCtrl: NavController) {
 
   }
@@ -17,6 +21,9 @@ export class HomePage {
   ionViewDidLoad() {
     this.headerSlideData = this.getHeaderSlideData();
     this.navData = this.getNavData();
+
+    this.recommendList = this.getRecommendList();
+    this.recListWidth = this.recommendList.length*92+'px';
   }
 
   private getHeaderSlideData() {
@@ -103,6 +110,18 @@ export class HomePage {
         }
       }
     ];
+  }
+
+  private getRecommendList(){
+    let list = [];
+    for(let i=0;i<10;i++){
+
+      list.push({
+        pic:'assets/img/homeImg/home-slide-0'+i+'.jpg',
+        title:'第'+i+'条'
+      });
+    }
+    return list;
   }
 
 }
