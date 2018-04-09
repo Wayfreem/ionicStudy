@@ -1,9 +1,3 @@
-<!--
-  Generated template for the MessagePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -12,43 +6,24 @@
 
 </ion-header>
 
+<ion-content>
+  <ion-list>
 
-<ion-content >
+    <ion-item>
 
-  <ion-content class="card-background-page">
+      <h2>My Neighbor Totoro</h2>
+      <p>Hayao Miyazaki • 1988</p>
+      <button ion-button clear item-end>查看</button>
+    </ion-item>
 
-    <ion-card class="header-img">
-      <img src="assets/img/user.jpg"/>
-      <div class="card-title">企业信息公告板</div>
-    </ion-card>
+    <ion-item *ngFor="let data of messageList">
+      <ion-thumbnail item-start>
+        <img src="{{data.src}}">
+      </ion-thumbnail>
+      <h2>{{data.label}}</h2>
+      <p>{{data.description}}</p>
+      <button ion-button clear item-end>{{data.buttonText}}</button>
+    </ion-item>
 
-    <ion-list>
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="assets/img/thumbnail-puppy-1.jpg">
-        </ion-thumbnail>
-        <h2>Ruby</h2>
-      </ion-item>
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="assets/img/thumbnail-puppy-2.jpg">
-        </ion-thumbnail>
-        <h2>Oscar</h2>
-      </ion-item>
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="assets/img/thumbnail-puppy-4.jpg">
-        </ion-thumbnail>
-        <h2>Zoey</h2>
-      </ion-item>
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="assets/img/thumbnail-puppy-3.jpg">
-        </ion-thumbnail>
-        <h2>Otto</h2>
-      </ion-item>
-    </ion-list>
-
-  </ion-content>
-
+  </ion-list>
 </ion-content>
