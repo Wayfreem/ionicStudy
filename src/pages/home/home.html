@@ -25,7 +25,7 @@
   <div class="floor">
     <div class="floor-title">精品推荐</div>
   </div>
-  <div class="floor-detail">
+  <div class="floor-detail-slide">
     <!--外层的ion-scroll 100%   里面元素的宽度要大于100%-->
     <ion-scroll scrollX="true">
       <ul class="clearfix" [ngStyle]="{'width':recListWidth}">
@@ -42,10 +42,37 @@
   <div class="floor">
     <div class="floor-title">家电</div>
   </div>
+  <div class="floor-product">
+    <ion-row>
+      <ion-col col-6>
+        <img src="assets/img/homeImg/home-slide-08.jpg" />
+        <p>XXX</p>
+      </ion-col>
+
+      <ion-col col-6>
+        <img src="assets/img/homeImg/home-slide-08.jpg" />
+        <p>XXX</p>
+      </ion-col>
+    </ion-row>
+  </div>
+
 
 
   <div class="floor">
     <div class="floor-title">手机</div>
+  </div>
+  <div class="floor-product">
+    <ion-row>
+      <ion-col col-6>
+        <img src="assets/img/homeImg/home-slide-09.jpg" />
+        <p>手机</p>
+      </ion-col>
+
+      <ion-col col-6>
+        <img src="assets/img/homeImg/home-slide-09.jpg" />
+        <p>手机</p>
+      </ion-col>
+    </ion-row>
   </div>
 
 </ion-content>
