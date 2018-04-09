@@ -25,19 +25,19 @@ export class ContactPage {
       },
       {
         src: "assets/img/contact/tortoise.png",
-        name: "老罗",
+        name: "老板",
       },
       {
         src: "assets/img/contact/tortoise.png",
-        name: "脱不花",
+        name: "CEO",
       },
       {
         src: "assets/img/contact/tortoise.png",
-        name: "李笑来",
+        name: "CTO",
       },
       {
         src: "assets/img/contact/tortoise.png",
-        name: "吴军",
+        name: "COO",
       },
     ];
   }

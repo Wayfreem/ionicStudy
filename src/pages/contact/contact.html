@@ -75,6 +75,47 @@
 
   <ion-card>
     <ion-card-header>联系人</ion-card-header>
+
+    <ion-item-group>
+      <ion-item-divider color="light">A</ion-item-divider>
+
+      <ion-list *ngFor="let contact of contactList;">
+        <ion-item-sliding>
+
+          <ion-item>
+            <ion-avatar item-start><img [src]="contact.src"></ion-avatar>
+            <h2>{{contact.name}}</h2>
+          </ion-item>
+
+          <ion-item-options side="left">
+            <button ion-button color="primary">
+              <ion-icon name="text"></ion-icon>
+              消息
+            </button>
+            <button ion-button color="secondary">
+              <ion-icon name="call"></ion-icon>
+              电话
+            </button>
+          </ion-item-options>
+
+          <ion-item-options side="right">
+            <button ion-button color="primary">
+              <ion-icon name="mail"></ion-icon>
+              邮件
+            </button>
+          </ion-item-options>
+
+        </ion-item-sliding>
+      </ion-list>
+
+    </ion-item-group>
+
+    <ion-item-group>
+      <ion-item-divider color="light">B</ion-item-divider>
+      <ion-item>Bob</ion-item>
+      <ion-item>Black</ion-item>
+    </ion-item-group>
+
   </ion-card>
 
 </ion-content>
