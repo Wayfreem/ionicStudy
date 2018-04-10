@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
 import {LoginPage} from "../login/login";
 import {ApprovalPage} from "../approval/approval";
@@ -21,12 +21,12 @@ export class SettingPage {
     console.log('ionViewDidLoad SettingPage');
   }
 
-  _logOut(){
+  _logOut() {
     let modal = this.modalCtrl.create(LoginPage);
     modal.present();
   }
 
-  _navToAboutUs(){
+  _navToAboutUs() {
     let data = {
       message: "a coder",
       callback: data => {
@@ -36,8 +36,9 @@ export class SettingPage {
     this.navCtrl.push(this.modalPage, data);
   }
 
-  _navToApproval(){
+  _navToApproval() {
     this.navCtrl.push(ApprovalPage);
   }
+
 
 }

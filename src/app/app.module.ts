@@ -13,6 +13,7 @@ import {LoginPage} from "../pages/login/login";
 import {BackButtonService} from "../services/backButton.service";
 import {MessagePageModule} from "../pages/message/message.module";
 import {ApprovalPageModule} from "../pages/approval/approval.module";
+import {ComponentsModule} from "../components/components.module";
 
 @NgModule({
   declarations: [
@@ -23,6 +24,9 @@ import {ApprovalPageModule} from "../pages/approval/approval.module";
     LoginPage,
   ],
   imports: [
+    // 自定义组件
+    ComponentsModule,
+
     // 自定义模块
     MessagePageModule,
     ApprovalPageModule,

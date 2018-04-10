@@ -15,10 +15,10 @@
 
   <!-- 功能导航 -->
   <nav id="nav">
-      <span *ngFor="let list of navData;" (click)="list.click()">
-        <img src="{{list.src}}" alt="{{list.alt}}" >
-        <h2>{{list.alt}}</h2>
-      </span>
+    <span *ngFor="let list of navData;" (click)="list.click()">
+      <img src="{{list.src}}" alt="{{list.alt}}">
+      <h2>{{list.alt}}</h2>
+    </span>
   </nav>
 
   <!-- 精品推荐 -->
@@ -31,7 +31,7 @@
       <ul class="clearfix" [ngStyle]="{'width':recListWidth}">
         <li *ngFor="let item of recommendList">
 
-          <img src="{{item.pic}}" />
+          <img src="{{item.pic}}"/>
           <p>{{item.title}}</p>
         </li>
       </ul>
@@ -40,36 +40,37 @@
 
   <!-- 分类楼层 -->
   <div class="floor">
-    <div class="floor-title">家电</div>
+    <div class="floor-title">电脑</div>
+    <div class="floor-more">更多 >></div>
   </div>
   <div class="floor-product">
     <ion-row>
       <ion-col col-6>
-        <img src="assets/img/homeImg/home-slide-08.jpg" />
+        <img src="assets/img/homeImg/home-slide-06.jpg"/>
         <p>XXX</p>
       </ion-col>
 
       <ion-col col-6>
-        <img src="assets/img/homeImg/home-slide-08.jpg" />
+        <img src="assets/img/homeImg/home-slide-07.jpg"/>
         <p>XXX</p>
       </ion-col>
     </ion-row>
   </div>
 
 
-
   <div class="floor">
     <div class="floor-title">手机</div>
+    <div class="floor-more">更多 >></div>
   </div>
   <div class="floor-product">
     <ion-row>
       <ion-col col-6>
-        <img src="assets/img/homeImg/home-slide-09.jpg" />
+        <img src="assets/img/homeImg/home-slide-08.jpg"/>
         <p>手机</p>
       </ion-col>
 
       <ion-col col-6>
-        <img src="assets/img/homeImg/home-slide-09.jpg" />
+        <img src="assets/img/homeImg/home-slide-09.jpg"/>
         <p>手机</p>
       </ion-col>
     </ion-row>

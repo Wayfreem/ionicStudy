@@ -1,16 +1,13 @@
 <ion-header>
-
   <ion-navbar>
     <ion-title>消息</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 <ion-content>
   <ion-list>
 
     <ion-item>
-
       <h2>My Neighbor Totoro</h2>
       <p>Hayao Miyazaki • 1988</p>
       <button ion-button clear item-end>查看</button>
@@ -26,4 +23,21 @@
     </ion-item>
 
   </ion-list>
+
+  <accordion-list *ngFor="let item of items; let index = index"
+                  [title]="item.name"
+                  textColor="#FFF"
+                  hasMargin="false"
+                  [expanded]="index === 0">
+
+    <ion-item *ngFor="let data of item.data">
+      <ion-thumbnail item-start>
+        <img src="{{data.src}}">
+      </ion-thumbnail>
+      <h2>{{data.label}}</h2>
+      <p>{{data.description}}</p>
+      <button ion-button clear item-end>{{data.buttonText}}</button>
+    </ion-item>
+
+  </accordion-list>
 </ion-content>

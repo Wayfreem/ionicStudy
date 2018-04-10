@@ -54,6 +54,7 @@ page-home {
     overflow: hidden;
 
     .floor-title {
+      float: left;
       font-size: 15px;
       padding: 8px 0 5px 7px;
     }
@@ -65,6 +66,13 @@ page-home {
       height: 12px;
       background-color: #d8505c;
       margin: 1px 7px 0 0;
+    }
+
+    .floor-more {
+      float: right;
+      margin-right: 5px;
+      padding: 8px 0 5px 7px;
+      font-size: 14px;
     }
   }
 
