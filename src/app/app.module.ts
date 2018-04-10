@@ -10,10 +10,11 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {LoginPage} from "../pages/login/login";
-import {BackButtonService} from "../services/backButton.service";
 import {MessagePageModule} from "../pages/message/message.module";
 import {ApprovalPageModule} from "../pages/approval/approval.module";
 import {ComponentsModule} from "../components/components.module";
+import { HttpServiceProvider } from '../providers/http-service/http-service';
+import { BackButtonServiceProvider } from '../providers/back-button-service/back-button-service';
 
 @NgModule({
   declarations: [
@@ -50,8 +51,10 @@ import {ComponentsModule} from "../components/components.module";
   providers: [
     StatusBar,
     SplashScreen,
-    BackButtonService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    BackButtonServiceProvider,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    HttpServiceProvider,
+    BackButtonServiceProvider
   ]
 })
 export class AppModule {}

@@ -2,9 +2,8 @@ import {Component, ViewChild} from '@angular/core';
 import {ContactPage} from '../contact/contact';
 import {MessagePage} from "../message/message";
 import {HomePage} from '../home/home';
-import {NavParams, Platform, Tabs, ViewController} from 'ionic-angular';
-import {BackButtonService} from '../../services/backButton.service';
-
+import {NavParams, Platform, Tabs} from 'ionic-angular';
+import {BackButtonServiceProvider} from "../../providers/back-button-service/back-button-service";
 
 @Component({
   templateUrl: 'tabs.html'
@@ -19,9 +18,8 @@ export class TabsPage {
   tab4Root = 'SettingPage';   // 使用懒加载
 
   constructor(public navParams: NavParams,
-              public viewCtrl: ViewController,
               public platform: Platform,
-              public backButtonService: BackButtonService) {
+              public backButtonService: BackButtonServiceProvider) {
 
     platform.ready().then(() => {
       this.backButtonService.registerBackButtonAction(this.tabRef);
