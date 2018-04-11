@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
 import {LoginPage} from "../login/login";
-import {ApprovalPage} from "../approval/approval";
+import {Storage} from "@ionic/storage";
 
 @IonicPage()
 @Component({
@@ -11,10 +11,12 @@ import {ApprovalPage} from "../approval/approval";
 export class SettingPage {
 
   modalPage = 'ModalPage';  // 使用懒加载
+  ApprovalPage = 'ApprovalPage';
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              public modalCtrl: ModalController) {
+              public modalCtrl: ModalController,
+              public storage: Storage) {
   }
 
   ionViewDidLoad() {
@@ -22,6 +24,8 @@ export class SettingPage {
   }
 
   _logOut() {
+    this.storage.remove("USER_INFO");
+
     let modal = this.modalCtrl.create(LoginPage);
     modal.present();
   }
@@ -37,7 +41,7 @@ export class SettingPage {
   }
 
   _navToApproval() {
-    this.navCtrl.push(ApprovalPage);
+    this.navCtrl.push(this.ApprovalPage);
   }
 
 
