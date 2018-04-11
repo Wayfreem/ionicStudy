@@ -15,6 +15,8 @@ import {ApprovalPageModule} from "../pages/approval/approval.module";
 import {ComponentsModule} from "../components/components.module";
 import { HttpServiceProvider } from '../providers/http-service/http-service';
 import { BackButtonServiceProvider } from '../providers/back-button-service/back-button-service';
+import { ConfigProvider } from '../providers/config/config';
+import {IonicStorageModule} from "@ionic/storage";
 
 @NgModule({
   declarations: [
@@ -33,7 +35,7 @@ import { BackButtonServiceProvider } from '../providers/back-button-service/back
     ApprovalPageModule,
 
     BrowserModule,
-    // IonicModule.forRoot(MyApp)
+    IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp, {
       tabsHideOnSubPages: 'true',  // 隐藏全部子页面 tabs
       // backButtonText: '返回',     修改返回按钮
@@ -54,7 +56,8 @@ import { BackButtonServiceProvider } from '../providers/back-button-service/back
     BackButtonServiceProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HttpServiceProvider,
-    BackButtonServiceProvider
+    BackButtonServiceProvider,
+    ConfigProvider,
   ]
 })
 export class AppModule {}
