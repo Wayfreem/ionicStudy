@@ -22,6 +22,20 @@
     </ion-card-content>
   </ion-card>
 
+  <ion-card>
+    <ion-card-header>
+      httpClient
+    </ion-card-header>
+    {{ httpClientData | json }}
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      http
+    </ion-card-header>
+    {{ httpData | json }}
+  </ion-card>
+
   <div padding>
     <button ion-button block (click)="getHttpData()">获取数据</button>
   </div>

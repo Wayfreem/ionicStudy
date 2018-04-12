@@ -14,6 +14,9 @@ export class ApprovalHomePage {
 
   items = [];
 
+  httpClientData : any ;
+  httpData : any;
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public httpServiceProvider :HttpServiceProvider,
@@ -30,26 +33,27 @@ export class ApprovalHomePage {
 
   _login(){
     let url = 'app/loginAction/doNotNeedSession_login.action';
-    let params = {CZYID: "0001131", CZYMM: "e6d678ce7fe7ca55d7ad8000074693ca"};
+    let params = {CZYID: "0001131", CZYMM: "4122cb13c7a474c1976c9706ae36521d"};
     let data = {pdata:  JSON.stringify(params)};
     this.httpServiceProvider.$post(url, data).subscribe(
       (resultData) => {
+        this.httpData = resultData;
         console.log(resultData);
     });
   }
 
   getHttpData() {
-    debugger;
     let method = `app/loginAction/doNotNeedSession_login.action`;
     let headers = new HttpHeaders({
       'Accept': 'application/json',
       'Content-Type': 'application/x-www-form-urlencoded'
     });
 
-    let data = {pdata: {CZYID: "0001131", CZYMM: "e6d678ce7fe7ca55d7ad8000074693ca"} };
-
-    this.post(method, JSON.stringify(data), headers).subscribe(
+    let params = {CZYID: "0001131", CZYMM: "4122cb13c7a474c1976c9706ae36521d"};
+    let data = {pdata:  JSON.stringify(params)};
+    this.post(method, data, headers).subscribe(
       (data) =>{
+        this.httpClientData = data;
         console.log(data);
       });
   }
@@ -75,7 +79,7 @@ export class ApprovalHomePage {
    * @returns {Observable<any>}
    */
   post(method: string, body: any, customHeaders?: HttpHeaders): Observable<any>{
-    debugger
+
     const BASE_URL = `http://14.23.148.134:8083/yyerp/`;
     const path = `${BASE_URL}${method}`;
 
