@@ -13,7 +13,6 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import {LoginPage} from "../pages/login/login";
 import {MessagePageModule} from "../pages/message/message.module";
-import {ApprovalPageModule} from "../pages/approval/approval.module";
 import {ComponentsModule} from "../components/components.module";
 import { HttpClientServiceProvider } from '../providers/http-service/http-client-service';
 import { BackButtonServiceProvider } from '../providers/back-button-service/back-button-service';
@@ -34,7 +33,6 @@ import {HttpServiceProvider} from "../providers/http-service/http-service";
 
     // 自定义模块
     MessagePageModule,
-    ApprovalPageModule,
 
     HttpModule,
     HttpClientModule,
