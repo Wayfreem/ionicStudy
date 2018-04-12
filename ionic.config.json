@@ -4,5 +4,11 @@
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "proxies": [
+    {
+      "path": "/yyerp",
+      "proxyUrl": "http://14.23.148.134:8083/yyerp/"
+    }
+]
 }

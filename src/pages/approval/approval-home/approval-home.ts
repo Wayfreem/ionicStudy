@@ -81,7 +81,7 @@ export class ApprovalHomePage {
   post(method: string, body: any, customHeaders?: HttpHeaders): Observable<any>{
 
     const BASE_URL = `http://14.23.148.134:8083/yyerp/`;
-    const path = `${BASE_URL}${method}`;
+    const path = `/yyerp/${method}`;
 
     return this.request(path, this.serialize(body), 'POST', customHeaders);
   }
