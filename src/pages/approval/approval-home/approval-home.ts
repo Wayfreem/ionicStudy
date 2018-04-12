@@ -3,7 +3,6 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {HttpClient, HttpHeaders, HttpParams, HttpRequest, HttpResponse} from "@angular/common/http";
 import {Observable} from "rxjs/Observable";
 
-import { RequestOptions, URLSearchParams, Request, Headers, Http } from '@angular/http';
 import {HttpServiceProvider} from "../../../providers/http-service/http-service";
 
 @IonicPage()
@@ -18,8 +17,7 @@ export class ApprovalHomePage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public httpServiceProvider :HttpServiceProvider,
-              public httpClient: HttpClient,
-              public http: Http,) {
+              public httpClient: HttpClient,) {
   }
 
   ionViewDidLoad() {
@@ -30,7 +28,7 @@ export class ApprovalHomePage {
     console.log(item);
   }
 
-  _loginByPublic(){
+  _login(){
     let url = 'app/loginAction/doNotNeedSession_login.action';
     let params = {CZYID: "0001131", CZYMM: "e6d678ce7fe7ca55d7ad8000074693ca"};
     let data = {pdata:  JSON.stringify(params)};
@@ -38,28 +36,6 @@ export class ApprovalHomePage {
       (resultData) => {
         console.log(resultData);
     });
-  }
-
-  _login(){
-    let $params = new URLSearchParams();
-    $params.set('pdata', JSON.stringify( {CZYID: "0001131", CZYMM: "e6d678ce7fe7ca55d7ad8000074693ca"}));
-    this.login($params).subscribe( (data)=>{
-      console.log(data);
-    } );
-  }
-
-  public login($params) {
-    let initHeaders = new Headers({ "content-type": 'application/x-www-form-urlencoded' });
-    const BASE_URL = `http://14.23.148.134:8083/yyerp/`;
-    let _url = `${BASE_URL}app/loginAction/doNotNeedSession_login.action`;
-
-    let requestOptions = new RequestOptions({
-      headers: initHeaders,
-      url: _url,
-      method: 1,
-      params: $params
-    });
-    return this.http.request(new Request(requestOptions)).map(res => res.json())
   }
 
   getHttpData() {
