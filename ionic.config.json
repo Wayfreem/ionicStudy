@@ -1,6 +1,8 @@
 {
-  "name": "ionicTabs",
+  "name": "猿猿ERP",
   "app_id": "",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }

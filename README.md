@@ -6,6 +6,7 @@
   <li>实现界面跳转是正向传值</li>
   <li>部分界面实现懒加载</li>
   <li>首页的轮播图效果</li>
+  <li>实现记住密码功能</li>
 </ul>
 
 # 安装方式
@@ -25,7 +26,7 @@
     ionic cordova platform add android  添加平台
     
     setp 2:
-    ionic cordova run android --prod --release   开发环境
+    ionic cordova run android --prod --release   开发环境(--livereload)
       # or
     ionic cordova build android --prod --release	生产环境
   
