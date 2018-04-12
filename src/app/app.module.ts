@@ -1,22 +1,24 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
+import {IonicStorageModule} from "@ionic/storage";
+import {HttpClientModule} from "@angular/common/http";
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import {HttpModule} from "@angular/http";
 
+import { MyApp } from './app.component';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
 import {LoginPage} from "../pages/login/login";
 import {MessagePageModule} from "../pages/message/message.module";
 import {ApprovalPageModule} from "../pages/approval/approval.module";
 import {ComponentsModule} from "../components/components.module";
-import { HttpServiceProvider } from '../providers/http-service/http-service';
+import { HttpClientServiceProvider } from '../providers/http-service/http-client-service';
 import { BackButtonServiceProvider } from '../providers/back-button-service/back-button-service';
 import { ConfigProvider } from '../providers/config/config';
-import {IonicStorageModule} from "@ionic/storage";
+import {HttpServiceProvider} from "../providers/http-service/http-service";
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import {IonicStorageModule} from "@ionic/storage";
     MessagePageModule,
     ApprovalPageModule,
 
+    HttpModule,
+    HttpClientModule,
     BrowserModule,
     IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp, {
@@ -55,9 +59,10 @@ import {IonicStorageModule} from "@ionic/storage";
     SplashScreen,
     BackButtonServiceProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    HttpServiceProvider,
+    HttpClientServiceProvider,
     BackButtonServiceProvider,
     ConfigProvider,
+    HttpServiceProvider,
   ]
 })
 export class AppModule {}
