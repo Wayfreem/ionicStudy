@@ -14,6 +14,9 @@ export class ApprovalHomePage {
 
   items = [];
 
+  postFunction: object = {};
+  checkErrorMsg:any;
+
   httpClientData : any ;
   httpData : any;
 
@@ -80,8 +83,11 @@ export class ApprovalHomePage {
    */
   post(method: string, body: any, customHeaders?: HttpHeaders): Observable<any>{
 
-    const BASE_URL = `http://14.23.148.134:8083/yyerp/`;
     const path = `/yyerp/${method}`;
+
+    this.postFunction["path"] = path;
+    this.postFunction["body"] = body;
+    this.postFunction["headers"] = customHeaders;
 
     return this.request(path, this.serialize(body), 'POST', customHeaders);
   }
@@ -104,6 +110,7 @@ export class ApprovalHomePage {
     } else {
       console.log(error);
     }
+    this.checkErrorMsg = error;
     throw error;
   }
 
