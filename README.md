@@ -37,21 +37,21 @@
 # 使用keytool生成keystore文件 
  keytool是JDK自带的加密工具，我们需要生成一个keystore文件，然后保存好，之后不需要每次都生成新的。
  
- 命令行：
- 
- keytool -genkey -v -keystore [keystore的文件名] -alias [别名] -keyalg RSA -keysize 2048 -validity 10000
+    命令行简介：
+    keytool -genkey -v -keystore [keystore的文件名] -alias [别名] -keyalg RSA -keysize 2048 -validity 10000
      
-     keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
+    使用的命令行为：
+    keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
 
 
 # 使用jarsigner签名 
 jarsigner是JDK自带的签名工具，我们需要将release版本的apk文件利用keystore文件进行加密，也就是签名，签名之后的apk才能发布到Android应用市场。
- 
-运行命令行：
-
-jarsigner -verbose -keystore [您的私钥存放路径] -signedjar [签名后文件存放路径] [未签名的文件路径] [您的证书的别名] 
-
-jarsigner -verbose -keystore my-release-key.keystore -signedjar complete.apk app-release-unsigned.apk alias_name
+     
+    命令行简介：
+    jarsigner -verbose -keystore [您的私钥存放路径] -signedjar [签名后文件存放路径] [未签名的文件路径] [您的证书的别名]
+    
+    使用的命令行为：
+    jarsigner -verbose -keystore my-release-key.keystore -signedjar complete.apk app-release-unsigned.apk alias_name
 
 
 # 常用的 ionic 命令
