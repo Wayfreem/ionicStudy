@@ -3,7 +3,6 @@ import {Injectable} from '@angular/core';
 import {ConfigProvider} from "../config/config";
 import {Observable} from "rxjs/Observable";
 import {Storage} from "@ionic/storage";
-import * as CryptoJS from 'crypto-js';
 import 'rxjs/Rx';
 import 'rxjs/add/observable/throw';
 
@@ -43,7 +42,7 @@ export class HttpClientServiceProvider {
     return params;
   }
 
-  private sign(param: object, secret: string) {
+  /*private sign(param: object, secret: string) {
     // 对参数名进行字典排序
     const arrayParam: any[] = [];
     for (const key in param) {
@@ -63,7 +62,7 @@ export class HttpClientServiceProvider {
     const shaSource = paramArray.join('');
     const sign = CryptoJS.SHA1(shaSource).toString(CryptoJS.enc.Hex).toUpperCase();
     return sign;
-  }
+  }*/
 
   get(path: string, args?: any): Observable<any> {
     const options = {
@@ -88,7 +87,7 @@ export class HttpClientServiceProvider {
     if (method.indexOf("login") == -1) {
       data.sessionId = this.storage.get("USER_INFO");
     }
-    data.sign = this.sign(data, secret);
+    // data.sign = this.sign(data, secret);
     return this.request(this.config.getPublicProductUrl(), this.serialize(data), RequestMethod.POST, customHeaders);
   }
 
