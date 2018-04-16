@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
 import {HttpClient, HttpHeaders, HttpParams, HttpRequest, HttpResponse} from "@angular/common/http";
 import {Observable} from "rxjs/Observable";
 
@@ -22,10 +22,23 @@ export class ApprovalHomePage {
   httpClientData : any ;
   httpData : any;
 
-  constructor(public navCtrl: NavController,
+  constructor(public platform: Platform,
+              public navCtrl: NavController,
               public navParams: NavParams,
               public httpServiceProvider :HttpServiceProvider,
               public httpClient: HttpClient,) {
+
+    if( platform.is("android") ){
+      console.log( "android" )
+    }else if( platform.is("mobileweb") ){
+     console.log( "mobileweb" )
+    }else if( platform.is("mobileweb") ){
+      console.log( "mobileweb" )
+    }else if ( this.platform.is("windows") ){
+      console.log("windows")
+    }
+
+
   }
 
   ionViewDidLoad() {
@@ -85,7 +98,8 @@ export class ApprovalHomePage {
    * @returns {Observable<any>}
    */
   post(method: string, body: any, customHeaders?: HttpHeaders): Observable<any>{
-    const path = `http://14.23.148.134:8083/yyerp/${method}`;
+    // const path = `http://14.23.148.134:8083/yyerp/${method}`;
+    const path = `/yyerp/${method}`;
 
     return this.request(path, this.serialize(body), 'POST', customHeaders);
   }
