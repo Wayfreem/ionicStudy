@@ -48,7 +48,6 @@ export class ApprovalHomePage {
   }
 
   getHttpData() {
-
     let method = `app/loginAction/doNotNeedSession_login.action`;
     let headers = new HttpHeaders({
       'Accept': 'application/json',
@@ -58,7 +57,6 @@ export class ApprovalHomePage {
     let params = {CZYID: "0001131", CZYMM: "4122cb13c7a474c1976c9706ae36521d"};
     let data = {pdata:  JSON.stringify(params)};
 
-    this.error = "getHttpData()----> 马上调用 post.subscribe()";
     this.post(method, data, headers).subscribe(
       (data) =>{
         this.httpClientData = data;
@@ -87,29 +85,20 @@ export class ApprovalHomePage {
    * @returns {Observable<any>}
    */
   post(method: string, body: any, customHeaders?: HttpHeaders): Observable<any>{
-    this.error = "post()----> 进入调用 post()";
-    const path = `/yyerp/${method}`;
+    const path = `http://14.23.148.134:8083/yyerp/${method}`;
 
-    this.postFunction["path"] = path;
-    this.postFunction["body"] = body;
-    this.postFunction["headers"] = customHeaders;
-
-    this.error = "post()----> 马上调用 request()";
     return this.request(path, this.serialize(body), 'POST', customHeaders);
   }
 
   request(path: string, body: any, method = 'POST', customHeaders?: HttpHeaders): Observable<any> {
-    this.error = "post()----> 进入调用 request()";
-
     const req = new HttpRequest(method, path, body, {
       headers: customHeaders ,
       withCredentials: true
     });
 
-    this.error = "request()----> 进入调用 request()";
     return this.httpClient.request(req)
-      .filter(response => response instanceof HttpResponse)
-      .map((response: HttpResponse<any>) => response.body)
+      .filter(response => response instanceof HttpResponse )
+      .map( (response: HttpResponse<any>) => response.body )
       .catch(error => this.checkError(error));
   }
 
