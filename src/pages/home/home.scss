@@ -1,52 +1,77 @@
 page-home {
 
-  ion-content{
-    overflow: scroll;
+  /*头部搜索栏*/
+  .header-search {
+    background-color: transparent;
+    width: 100%;
+    position: fixed;
+    height: 40px;
+    z-index: 2;
+    display: inline-block;
+
+    .header-search-bgColor {
+      width: 100%;
+      height: 40px;
+      opacity: 0;
+      background-color: #e0e0e0;
+      position: absolute;
+      border: 1px solid #ccc;
+    }
+
+    .header-swiper-input {
+      margin: 0 10px;
+      line-height: 40px;
+
+      div {
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: 20px;
+        left: 19px;
+        top: 2px;
+        width: 21px;
+        height: 21px;
+        z-index: 2;
+        display: inline-block;
+      }
+
+      ion-icon {
+        color: #6A6A6A;
+      }
+
+      input {
+        width: 90%;
+        height: 30px;
+        text-indent: 5px;
+        opacity: 0.6;
+        font-weight: 400;
+        color: #000;
+        padding: 0 0 0 25px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      input:focus {
+        opacity: .85;
+      }
+
+      .headerBar-login {
+        width: 30px;
+        height:inherit;
+        position: absolute;
+        right: 7px;
+        display: inline-block;
+      }
+
+      .headerBar-login span{
+        color:#ffffff;
+        font-size: 15px;
+        display: inline-block;
+      }
+    }
   }
 
-  /*头部搜索栏*/
- .header-search{
-   width: 100%;
-   position: fixed;
-   height: 40px;
-   z-index: 2;
 
-   .swriper-input{
-     margin: 0 10px;
-     line-height: 40px;
 
-     i {
-       position: absolute;
-       background-repeat: no-repeat;
-       background-size: 20px;
-       left: 19px;
-       top: 2px;
-       width: 21px;
-       height: 21px;
-       z-index: 2
-     }
-
-     ion-icon {
-       color: #6A6A6A;
-     }
-
-     input{
-       width: 100%;
-       height: 30px;
-       border-radius: 5px;
-       text-indent: 5px;
-       opacity: 0.6;
-       font-weight: 400;
-       color: #000;
-       background-color: #fff;
-       padding: 0 0 0 25px;
-     }
-
-     input:focus{
-       opacity: .85;
-     }
-   }
- }
 
   /* 轮播图 */
   .swiper-container {

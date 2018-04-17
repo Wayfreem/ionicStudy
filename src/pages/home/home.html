@@ -1,17 +1,21 @@
 
-<ion-content>
+<ion-content id="home">
 
   <!--搜索框-->
-  <div #headerSearch class="header-search">
-    <div class="swriper-input">
-      <i class="searchbar-search-icon">
+  <div class="header-search">
+    <div #headerSearch class="header-search-bgColor"></div>
+    <div class="header-swiper-input">
+      <div class="searchbar-search-icon">
         <ion-icon name="search"></ion-icon>
-      </i>
+      </div>
       <input placeholder="搜索..." (click)="goSearch()"/>
+      <a class="headerBar-login" (click)="goSearch('login')">
+        <span>搜索</span>
+      </a>
     </div>
   </div>
 
-  <div #lyScroll class="scroll-content" scroll="false">
+  <div #lyScroll class="scroll-content">
     <!--头部滚动 -->
     <ion-slides pager class="swiper-container" loop="true" autoplay="3000">
       <ion-slide class="swiper-wrapper" *ngFor="let item of headerSlideData">

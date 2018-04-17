@@ -35,16 +35,15 @@ export class HomePage {
   }
 
   private headerChangeColor() {
-    debugger;
     let nowOpacity = 0;
     let headDiv = this.lyScrollDiv.nativeElement;
     let headerSearch = this.headerSearch.nativeElement;
 
     headDiv.onscroll = function() {
-      if (this.scrollTop / 250 < .85) {
+      if (this.scrollTop / 250 < 0.85) {
         nowOpacity = this.scrollTop / 250;
       }
-      headerSearch.style.opacity = nowOpacity;
+      headerSearch.style.opacity = nowOpacity ;
     }
   }
 
