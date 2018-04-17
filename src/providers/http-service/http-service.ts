@@ -1,28 +1,15 @@
 import {Injectable} from "@angular/core";
 import {Headers, Http, Request, RequestMethod, RequestOptions, URLSearchParams} from "@angular/http";
 import {Observable} from "rxjs/Observable";
-
-//55
-// export const BASE_URL = 'http://10.2.0.55:8080/yyerp/';
-
-// 外网
-export const BASE_URL = `http://14.23.148.134:8083/yyerp/`;
-
-//32
-// export const BASE_URL = 'http://10.2.0.32:8080/yyerp/';
-
-//36
-// export const BASE_URL = `http://10.2.0.36:8888/yyerp/`
-
-//本地
-//export const BASE_URL = `http://127.0.0.1:8081/yyerp/`
+import {ConfigProvider} from "../config/config";
 
 @Injectable()
 export class HttpServiceProvider {
 
   headers: Headers = new Headers({'content-type': 'application/x-www-form-urlencoded'});
 
-  constructor(private http: Http,) {
+  constructor(private http: Http,
+              private configProvider: ConfigProvider) {
   }
 
   private serialize(obj: any): URLSearchParams {
@@ -36,7 +23,7 @@ export class HttpServiceProvider {
   }
 
   public $get(path: string, params: URLSearchParams, contentType?: string) {
-    let url = `${BASE_URL}${path}`;
+    let url = `${this.configProvider.getProductionUrl()}${path}`;
     let requestOptions = this._createRequestOptions(url, RequestMethod.Get, params,);
     return this.http.request(new Request(requestOptions))
       .map(res => res.json())
@@ -47,7 +34,7 @@ export class HttpServiceProvider {
   }
 
   public $post(path: string, params: object) {
-    let url = `${BASE_URL}${path}`;
+    let url = `${this.configProvider.getProductionUrl()}${path}`;
     let requestOptions = this._createRequestOptions(url, RequestMethod.Post, this.serialize(params));
     return this.http.request(new Request(requestOptions)).map(res => res.json());
   };
