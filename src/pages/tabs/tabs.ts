@@ -11,6 +11,7 @@ import {BackButtonServiceProvider} from "../../providers/back-button-service/bac
 export class TabsPage {
 
   @ViewChild('myTabs') tabRef: Tabs;
+  @ViewChild('messageTabs') messageTabs: MessagePage;
 
   tab1Root = HomePage;
   tab2Root = MessagePage;
@@ -30,4 +31,5 @@ export class TabsPage {
     let modelData: string = '用户名：' + this.navParams.get('username');
     console.log(modelData);
   }
+
 }
