@@ -1,9 +1,8 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
-import {HttpClient, HttpHeaders, HttpParams, HttpRequest, HttpResponse} from "@angular/common/http";
-import {Observable} from "rxjs/Observable";
 
 import {HttpServiceProvider} from "../../../providers/http-service/http-service";
+import {HttpClientServiceProvider} from "../../../providers/http-service/http-client-service";
 
 @IonicPage()
 @Component({
@@ -16,28 +15,14 @@ export class ApprovalHomePage {
 
   items = [];
 
-  postFunction: object = {};
-  checkErrorMsg:any;
-
-  httpClientData : any ;
-  httpData : any;
+  httpClientData: any;
+  httpData: any;
 
   constructor(public platform: Platform,
               public navCtrl: NavController,
               public navParams: NavParams,
-              public httpServiceProvider :HttpServiceProvider,
-              public httpClient: HttpClient,) {
-
-    if( platform.is("android") ){
-      console.log( "android" )
-    }else if( platform.is("mobileweb") ){
-     console.log( "mobileweb" )
-    }else if( platform.is("mobileweb") ){
-      console.log( "mobileweb" )
-    }else if ( this.platform.is("windows") ){
-      console.log("windows")
-    }
-
+              public httpService: HttpServiceProvider,
+              public httpClientService: HttpClientServiceProvider,) {
 
   }
 
@@ -49,81 +34,29 @@ export class ApprovalHomePage {
     console.log(item);
   }
 
-  _login(){
+  _login() {
     let url = 'app/loginAction/doNotNeedSession_login.action';
     let params = {CZYID: "0001131", CZYMM: "4122cb13c7a474c1976c9706ae36521d"};
-    let data = {pdata:  JSON.stringify(params)};
-    this.httpServiceProvider.$post(url, data).subscribe(
+    let data = {pdata: JSON.stringify(params)};
+    this.httpService.$post(url, data).subscribe(
       (resultData) => {
         this.httpData = resultData;
         console.log(resultData);
-    });
+      });
   }
 
   getHttpData() {
     let method = `app/loginAction/doNotNeedSession_login.action`;
-    let headers = new HttpHeaders({
-      'Accept': 'application/json',
-      'Content-Type': 'application/x-www-form-urlencoded'
-    });
 
     let params = {CZYID: "0001131", CZYMM: "4122cb13c7a474c1976c9706ae36521d"};
-    let data = {pdata:  JSON.stringify(params)};
+    let data = {pdata: JSON.stringify(params)};
 
-    this.post(method, data, headers).subscribe(
-      (data) =>{
-        this.httpClientData = data;
-        console.log(data);
+    this.httpClientService.post(method, data).subscribe(
+      (resultData) => {
+        this.httpData = resultData;
+        console.log(resultData);
       });
   }
 
-
-  // 将数据转换为 httpParams
-  private serialize(obj: any): HttpParams {
-    let params = new HttpParams();
-
-    for (const key in obj) {
-      if (obj.hasOwnProperty(key)) {
-        params = params.set(key, obj[key]);
-      }
-    }
-    return params;
-  }
-
-  /**
-   * 发送 post 请求
-   * @param {string} method 调用的方法名
-   * @param body  传入后端的参数
-   * @param {HttpHeaders} customHeaders 请求的头信息
-   * @returns {Observable<any>}
-   */
-  post(method: string, body: any, customHeaders?: HttpHeaders): Observable<any>{
-    // const path = `http://14.23.148.134:8083/yyerp/${method}`;
-    const path = `/yyerp/${method}`;
-
-    return this.request(path, this.serialize(body), 'POST', customHeaders);
-  }
-
-  request(path: string, body: any, method = 'POST', customHeaders?: HttpHeaders): Observable<any> {
-    const req = new HttpRequest(method, path, body, {
-      headers: customHeaders ,
-      withCredentials: true
-    });
-
-    return this.httpClient.request(req)
-      .filter(response => response instanceof HttpResponse )
-      .map( (response: HttpResponse<any>) => response.body )
-      .catch(error => this.checkError(error));
-  }
-
-  private checkError(error: any): any {
-    if (error && error.status === 401) {
-      console.log('401---------------------');
-    } else {
-      console.log(error);
-    }
-    this.checkErrorMsg = error;
-    throw error;
-  }
 
 }
