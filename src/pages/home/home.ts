@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 @Component({
@@ -7,6 +7,12 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
+  @ViewChild('lyScroll')
+  lyScrollDiv: ElementRef;
+
+  @ViewChild('headerSearch')
+  headerSearch: ElementRef;
+
   public headerSlideData = [];
   public navData = [];
 
@@ -14,16 +20,36 @@ export class HomePage {
   recListWidth = '';
   recommendList=[];
 
-  constructor(public navCtrl: NavController) {
-
+  constructor(public navCtrl: NavController,
+              public el: ElementRef) {
   }
 
   ionViewDidLoad() {
+    this.headerChangeColor();
+
     this.headerSlideData = this.getHeaderSlideData();
     this.navData = this.getNavData();
 
     this.recommendList = this.getRecommendList();
     this.recListWidth = this.recommendList.length*92+'px';
+  }
+
+  private headerChangeColor() {
+    debugger;
+    let nowOpacity = 0;
+    let headDiv = this.lyScrollDiv.nativeElement;
+    let headerSearch = this.headerSearch.nativeElement;
+
+    headDiv.onscroll = function() {
+      if (this.scrollTop / 250 < .85) {
+        nowOpacity = this.scrollTop / 250;
+      }
+      headerSearch.style.opacity = nowOpacity;
+    }
+  }
+
+  goSearch(){
+
   }
 
   private getHeaderSlideData() {

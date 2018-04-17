@@ -53,7 +53,7 @@ export class ApprovalHomePage {
 
     this.httpClientService.post(method, data).subscribe(
       (resultData) => {
-        this.httpData = resultData;
+        this.httpClientData = resultData;
         console.log(resultData);
       });
   }

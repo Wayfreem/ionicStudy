@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -11,7 +11,9 @@ export class ApprovalPage {
   tab1Root = 'ApprovalHomePage';
   tab2Root = 'ApprovalTodoPage';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public platform: Platform,) {
   }
 
   ionViewDidLoad() {

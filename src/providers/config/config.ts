@@ -10,8 +10,6 @@ export class ConfigProvider {
     console.log('Hello ConfigProvider Provider');
   }
 
-
-
   getProductionUrl() {
     let urlConfig = {
       localUrl: `http://127.0.0.1:8081/yyerp/`,
@@ -19,10 +17,10 @@ export class ConfigProvider {
       _32Url: `http://10.2.0.32:8080/yyerp/`,
       _36Url: `http://10.2.0.36:8888/yyerp/`,
       productionUrl: `http://14.23.148.134:8083/yyerp/`,
-      proxyUrl: `/yyerp`,
+      proxyUrl: `/yyerp/`,
     };
 
-    return urlConfig.productionUrl;
+    return urlConfig.proxyUrl;
   }
 
 
