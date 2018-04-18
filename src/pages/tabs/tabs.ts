@@ -3,7 +3,7 @@ import {ContactPage} from '../contact/contact';
 import {MessagePage} from "../message/message";
 import {HomePage} from '../home/home';
 import {NavParams, Platform, Tabs} from 'ionic-angular';
-import {BackButtonServiceProvider} from "../../providers/back-button-service/back-button-service";
+import {BackButtonServiceProvider} from "../../providers/utils/back-button-service";
 
 @Component({
   templateUrl: 'tabs.html'

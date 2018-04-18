@@ -25,7 +25,7 @@ export class SearchPage {
     for(let i=0;i<10;i++){
 
       this.list.push({
-        pic:'assets/imgs/0'+i+'.jpg',
+        pic:'assets/img/homeImg/home-slide-0'+i+'.jpg',
         title:'第'+i+'条'
       })
     }

@@ -3,9 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import {IonicStorageModule} from "@ionic/storage";
 import {HttpClientModule} from "@angular/common/http";
+import {HttpModule} from "@angular/http";
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import {HttpModule} from "@angular/http";
+import { Camera } from '@ionic-native/camera';
 
 import { MyApp } from './app.component';
 import { ContactPage } from '../pages/contact/contact';
@@ -15,9 +17,22 @@ import {LoginPage} from "../pages/login/login";
 import {MessagePageModule} from "../pages/message/message.module";
 import {ComponentsModule} from "../components/components.module";
 import { HttpClientServiceProvider } from '../providers/http-service/http-client-service';
-import { BackButtonServiceProvider } from '../providers/back-button-service/back-button-service';
+import { BackButtonServiceProvider } from '../providers/utils/back-button-service';
 import { ConfigProvider } from '../providers/config/config';
 import {HttpServiceProvider} from "../providers/http-service/http-service";
+import {CameraProvider} from "../providers/utils/camera.provider";
+
+const PROVIDERS = [
+  // 自定义模块
+  HttpClientServiceProvider,
+  BackButtonServiceProvider,
+  ConfigProvider,
+  HttpServiceProvider,
+  CameraProvider,
+
+  // Ionic native specific providers
+  Camera,
+];
 
 @NgModule({
   declarations: [
@@ -55,12 +70,9 @@ import {HttpServiceProvider} from "../providers/http-service/http-service";
   providers: [
     StatusBar,
     SplashScreen,
-    BackButtonServiceProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    HttpClientServiceProvider,
-    BackButtonServiceProvider,
-    ConfigProvider,
-    HttpServiceProvider,
+
+    ...PROVIDERS,
   ]
 })
 export class AppModule {}
