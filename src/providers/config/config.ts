@@ -22,7 +22,7 @@ export class ConfigProvider {
       proxyUrl_new:`/yyerpNew/`
     };
 
-    return urlConfig.proxyUrl_new;
+    return urlConfig.newTestUrl;
   }
 
 
