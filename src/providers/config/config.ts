@@ -17,10 +17,12 @@ export class ConfigProvider {
       _32Url: `http://10.2.0.32:8080/yyerp/`,
       _36Url: `http://10.2.0.36:8888/yyerp/`,
       productionUrl: `http://14.23.148.134:8083/yyerp/`,
+      newTestUrl: `http://10.2.4.196:6060/router/`,
       proxyUrl: `/yyerp/`,
+      proxyUrl_new:`/yyerpNew/`
     };
 
-    return urlConfig.proxyUrl;
+    return urlConfig.proxyUrl_new;
   }
 
 
