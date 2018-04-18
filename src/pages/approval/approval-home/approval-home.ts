@@ -18,6 +18,7 @@ export class ApprovalHomePage {
 
   httpClientData: any;
   httpData: any;
+  newERPData: any;
 
   constructor(public platform: Platform,
               public navCtrl: NavController,
@@ -57,6 +58,16 @@ export class ApprovalHomePage {
     this.httpClientService.post(method, data).subscribe(
       (resultData) => {
         this.httpClientData = resultData;
+        console.log(resultData);
+      });
+  }
+
+  getNewERPData(){
+    const userModel = { userId: "czy01" };
+
+    this.httpClientService.postWithSign('aut.user.getPosts', {body: JSON.stringify(userModel)}).subscribe(
+      (resultData) => {
+        this.newERPData = resultData;
         console.log(resultData);
       });
   }
