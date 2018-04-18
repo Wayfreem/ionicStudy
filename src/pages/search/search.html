@@ -1,18 +1,56 @@
-<!--
-  Generated template for the SearchPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>search</ion-title>
+    <ion-searchbar></ion-searchbar>
+    <ion-buttons end>
+      <button ion-button (click)="changeContent()">搜索</button>
+    </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
+  <div class="search_content" *ngIf="!flag">
+    <div class="hotlist">
+      <h3 class="search_title">热搜</h3>
+      <p>
+        <span>女装</span>
+        <span>男装</span>
+        <span>家具</span>
+        <span>化妆品</span>
+        <span>女装</span>
+      </p>
+    </div>
+
+    <div class="history">
+      <h3 class="search_title">历史搜索</h3>
+      <ion-list inset>
+        <ion-item>男装</ion-item>
+        <ion-item>女装</ion-item>
+        <ion-item>汽车</ion-item>
+        <ion-item>美容</ion-item>
+      </ion-list>
+    </div>
+  </div>
+
+  <div class="list_content" *ngIf="flag">
+
+    <div class="sub_header">
+      <div>综合</div>
+      <div>销量</div>
+      <div>价格</div>
+    </div>
+
+    <ion-list inset>
+      <ion-item *ngFor="let item of list">
+        <ion-thumbnail item-left>
+          <img src="{{item.pic}}"/>
+        </ion-thumbnail>
+        <h2> {{item.title}}</h2>
+        <p>价格:123元</p>
+      </ion-item>
+    </ion-list>
+  </div>
 
 </ion-content>

@@ -1,3 +1,57 @@
 page-search {
+  /*热搜*/
+  .search_title {
+
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: .5rem 0px;
+    margin: 0px;
+  }
+  .hotlist {
+
+    padding: .5rem;
+  }
+  .hotlist p {
+    padding: 1rem 0px;
+  }
+
+  .hotlist span {
+    padding: .5rem 1rem;
+    background: #eee;
+    border-radius: .5rem;
+    margin: .5rem;
+    display: inline-block;
+  }
+
+  .history {
+    border-top: 10px solid #eee;
+    padding: .5rem;
+    font-size: 1.4rem;
+  }
+
+  //列表
+
+  .sub_header {
+
+    height: 4rem;
+    line-height: 4rem;
+    position: fixed;
+    top: 4.3rem;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    z-index: 2;
+    background: #fff;
+
+    div {
+      flex: 1;
+      text-align: center;
+    }
+  }
+
+  .list_content .list-ios[inset] {
+
+    margin-top: 4rem !important;
+  }
 
 }

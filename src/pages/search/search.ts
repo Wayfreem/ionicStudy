@@ -15,11 +15,28 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SearchPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  public flag=true;  /*有没有关键词、关键词开关*/
 
+  public list=[];  /*模拟商品数据*/
+
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams) {
+
+    for(let i=0;i<10;i++){
+
+      this.list.push({
+        pic:'assets/imgs/0'+i+'.jpg',
+        title:'第'+i+'条'
+      })
+    }
+
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad SearchPage');
+  }
+
+  changeContent(){
+    this.flag = !this.flag;
   }
 
 }

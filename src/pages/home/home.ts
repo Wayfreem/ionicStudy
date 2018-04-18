@@ -16,6 +16,8 @@ export class HomePage {
   public headerSlideData = [];
   public navData = [];
 
+  searchPage = 'SearchPage';
+
   // 精品推荐
   recListWidth = '';
   recommendList=[];
@@ -48,7 +50,7 @@ export class HomePage {
   }
 
   goSearch(){
-
+    this.navCtrl.push(this.searchPage);
   }
 
   private getHeaderSlideData() {
