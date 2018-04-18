@@ -9,6 +9,10 @@
     {
       "path": "/yyerp",
       "proxyUrl": "http://14.23.148.134:8083/yyerp/"
+    },
+    {
+      "path": "/yyerpNew",
+      "proxyUrl": "http://10.2.4.196:6060/router/"
     }
-]
+  ]
 }
