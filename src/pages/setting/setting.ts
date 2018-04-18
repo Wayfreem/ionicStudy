@@ -10,8 +10,10 @@ import {Storage} from "@ionic/storage";
 })
 export class SettingPage {
 
-  modalPage = 'ModalPage';  // 使用懒加载
+  // 使用懒加载
+  modalPage = 'ModalPage';
   ApprovalPage = 'ApprovalPage';
+  NativePage = 'NativePage';
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -42,6 +44,10 @@ export class SettingPage {
 
   _navToApproval() {
     this.navCtrl.push(this.ApprovalPage);
+  }
+
+  _navToNative(){
+    this.navCtrl.push(this.NativePage);
   }
 
 
