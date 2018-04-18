@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
+import * as CryptoJS from 'crypto-js';
 
 import {HttpServiceProvider} from "../../../providers/http-service/http-service";
 import {HttpClientServiceProvider} from "../../../providers/http-service/http-client-service";
@@ -36,7 +37,8 @@ export class ApprovalHomePage {
 
   _login() {
     let url = 'app/loginAction/doNotNeedSession_login.action';
-    let params = {CZYID: "0001131", CZYMM: "4122cb13c7a474c1976c9706ae36521d"};
+    let pwd = CryptoJS.MD5("1230").toString(CryptoJS.enc.Hex);
+    let params = {CZYID: "0001131", CZYMM: pwd};
     let data = {pdata: JSON.stringify(params)};
     this.httpService.$post(url, data).subscribe(
       (resultData) => {
@@ -48,7 +50,8 @@ export class ApprovalHomePage {
   getHttpData() {
     let method = `app/loginAction/doNotNeedSession_login.action`;
 
-    let params = {CZYID: "0001131", CZYMM: "4122cb13c7a474c1976c9706ae36521d"};
+    let pwd = CryptoJS.MD5("1230").toString(CryptoJS.enc.Hex);
+    let params = {CZYID: "0001131", CZYMM: pwd};
     let data = {pdata: JSON.stringify(params)};
 
     this.httpClientService.post(method, data).subscribe(
