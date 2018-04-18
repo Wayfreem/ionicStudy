@@ -7,6 +7,9 @@
   <li>部分界面实现懒加载</li>
   <li>首页的轮播图效果</li>
   <li>实现记住密码功能</li>
+  <li>封装出accordion组件</li>
+  <li>引入crypto-js 加密包</li>
+  <li>Http 以及 http client 两种调用方式</li>
 </ul>
 
 # 安装方式
