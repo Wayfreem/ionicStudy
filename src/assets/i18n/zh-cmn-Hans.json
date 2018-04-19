@@ -17,18 +17,16 @@
   "TUTORIAL_SKIP_BUTTON": "跳过",
   "TUTORIAL_CONTINUE_BUTTON": "继续",
 
-  "TUTORIAL_SLIDE1_TITLE": "欢迎来到 Ionic Super Starter",
-  "TUTORIAL_SLIDE1_DESCRIPTION": "<b>Ionic Super Starter</b> 是一个功能全面，内置多个页面以及最佳实践的 Ionic 入门教程。",
+  "TUTORIAL_SLIDE1_TITLE": "欢迎来到 猿猿ERP",
+  "TUTORIAL_SLIDE1_DESCRIPTION": "<b>猿猿ERP</b> 是一个功能全面，提供优质的服务平台。",
 
-  "TUTORIAL_SLIDE2_TITLE": "如何使用 Super 入门教程",
-  "TUTORIAL_SLIDE2_DESCRIPTION": "使用你需要的多种多样的页面删除你不需要的页面。我们提供许多常见移动 app 页面，如登录、注册页面，tabs 标签页，以及本教程页面。",
+  "TUTORIAL_SLIDE2_TITLE": "如何使用 猿猿ERP ",
+  "TUTORIAL_SLIDE2_DESCRIPTION": "简单、实用，人性化的操作，以及增加各种办公入口。",
 
   "TUTORIAL_SLIDE3_TITLE": "开始",
-  "TUTORIAL_SLIDE3_DESCRIPTION": "需要帮助？查看 Super 入门教程的帮助文档，可获得完整教程。",
+  "TUTORIAL_SLIDE3_DESCRIPTION": "进入我们的世界。",
 
-  "TUTORIAL_SLIDE4_TITLE": "开始学习？",
-
-  "WELCOME_INTRO": "出发，你的下一个强大的 Ionic app",
+  "TUTORIAL_SLIDE4_TITLE": "进入？",
 
   "SETTINGS_TITLE": "设置",
   "SETTINGS_OPTION1": "选项 1",

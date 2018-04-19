@@ -17,18 +17,16 @@
   "TUTORIAL_SKIP_BUTTON": "跳過",
   "TUTORIAL_CONTINUE_BUTTON": "繼續",
 
-  "TUTORIAL_SLIDE1_TITLE": "歡迎來到 Ionic Super Starter",
-  "TUTORIAL_SLIDE1_DESCRIPTION": "<b>Ionic Super Starter</b> 是一個功能全面，內置多個頁面以及最佳實踐的 Ionic 入門教程。",
+  "TUTORIAL_SLIDE1_TITLE": "歡迎來到 猿猿ERP",
+  "TUTORIAL_SLIDE1_DESCRIPTION": "<b>Ionic Super Starter</b> 是一個功能全面，提供優質的服務平臺。",
 
-  "TUTORIAL_SLIDE2_TITLE": "如何使用 Super 入門教程",
-  "TUTORIAL_SLIDE2_DESCRIPTION": "使用你需要的多種多樣的頁面刪除你不需要的頁面。我們提供許多常見移動 app 頁面，如登錄、註冊頁面，tabs 標簽頁，以及本教程頁面。",
+  "TUTORIAL_SLIDE2_TITLE": "如何使用 猿猿ERP",
+  "TUTORIAL_SLIDE2_DESCRIPTION": "簡單、實用，人性化的操作，以及增加各種辦公入口。",
 
   "TUTORIAL_SLIDE3_TITLE": "開始",
-  "TUTORIAL_SLIDE3_DESCRIPTION": "需要幫助？查看 Super 入門教程的幫助文檔，可獲得完整教程。",
+  "TUTORIAL_SLIDE3_DESCRIPTION": "進入我們的世界。",
 
-  "TUTORIAL_SLIDE4_TITLE": "開始學習？",
-
-  "WELCOME_INTRO": "出發，你的下一個強大的 Ionic app",
+  "TUTORIAL_SLIDE4_TITLE": "進入？",
 
   "SETTINGS_TITLE": "設置",
   "SETTINGS_OPTION1": "選項 1",
@@ -39,8 +37,6 @@
   "SETTINGS_PROFILE_BUTTON": "編輯資料",
 
   "SETTINGS_PAGE_PROFILE": "編輯資料",
-
-  "WELCOME_TITLE": "歡迎",
 
   "LOGIN_TITLE": "登錄",
   "LOGIN_ERROR": "無法登錄。請檢查賬號信息然後重試。",
