@@ -4,7 +4,7 @@ import {Storage} from '@ionic/storage';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {TranslateService} from '@ngx-translate/core';
-import {LoginPage} from "../pages/login/login";
+// import {LoginPage} from "../pages/login/login";
 import {TabsPage} from "../pages/tabs/tabs";
 
 @Component({
@@ -28,7 +28,7 @@ export class MyApp {
           if (isRemember) {
             this.rootPage = TabsPage;
           } else {
-            this.rootPage = LoginPage;
+            this.rootPage = 'TutorialPage';
           }
         }
       );
@@ -45,7 +45,6 @@ export class MyApp {
   }
 
   initTranslate() {
-    debugger;
     // 根据浏览器来判断字符集
     this.translate.setDefaultLang('zh-cmn-Hans');
     const browserLang = this.translate.getBrowserLang();
