@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController, ToastController} from 'ionic-angular';
-import { TabsPage} from "../tabs/tabs";
 import {Storage} from "@ionic/storage";
+import { TabsPage} from "../tabs/tabs";
 
 @Component({
   selector: 'page-login',
