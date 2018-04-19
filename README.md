@@ -14,13 +14,21 @@
 
 # 安装方式
     
+    // 安装 ionic，如果已经安装，跳过此步骤
+    npm install -g ionic
+    
     step 1：
     git clone code or download zip to desktop
 
     step 2：
     npm `i` or `npm install`, download the package
 
+    // 项目上面使用到了 camera
     step 3：
+    - ionic cordova plugin add cordova-plugin-camera
+    - npm install --save @ionic-native/camera
+
+    step 4：
     `ionic serve`, run this app
 
 # 打包的方式
