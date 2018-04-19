@@ -2,8 +2,11 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import {IonicStorageModule} from "@ionic/storage";
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {HttpModule} from "@angular/http";
+
+import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,6 +25,7 @@ import { ConfigProvider } from '../providers/config/config';
 import {HttpServiceProvider} from "../providers/http-service/http-service";
 import {CameraProvider} from "../providers/utils/camera.provider";
 
+
 const PROVIDERS = [
   // 自定义模块
   HttpClientServiceProvider,
@@ -33,6 +37,11 @@ const PROVIDERS = [
   // Ionic native specific providers
   Camera,
 ];
+
+// 设置翻译文件的路径
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -52,6 +61,13 @@ const PROVIDERS = [
     HttpModule,
     HttpClientModule,
     BrowserModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    }),
     IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp, {
       tabsHideOnSubPages: 'true',  // 隐藏全部子页面 tabs
