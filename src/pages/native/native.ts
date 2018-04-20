@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import {IonicPage, NavController, ToastController} from 'ionic-angular';
 
 /**
  * Generated class for the NativePage page.
@@ -18,7 +18,7 @@ export class NativePage {
   rootPage: any;
   items: Array<{ title: string, page: any }>;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public toastCtrl: ToastController,) {
     this.rootPage = 'IonicNativePage';
 
     this.items = [
@@ -46,7 +46,17 @@ export class NativePage {
   }
 
   itemTapped(event, item) {
-    this.navCtrl.push(item.page);
+    this.navCtrl.push(item.page).catch( (error) => {
+     console.log(error);
+
+      let toast = this.toastCtrl.create({
+        message: "紧急开发中...",
+        duration: 2000,
+        position: "bottom"
+      });
+
+      toast.present(toast);
+    });
   }
 
 }
