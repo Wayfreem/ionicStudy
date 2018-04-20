@@ -4,8 +4,10 @@ import {Storage} from '@ionic/storage';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {TranslateService} from '@ngx-translate/core';
-// import {LoginPage} from "../pages/login/login";
+
 import {TabsPage} from "../pages/tabs/tabs";
+import {Settings} from "../providers/utils/settings";
+import {LoginPage} from "../pages/login/login";
 
 @Component({
   templateUrl: 'app.html'
@@ -18,20 +20,25 @@ export class MyApp {
               statusBar: StatusBar,
               splashScreen: SplashScreen,
               storage: Storage,
-              private translate: TranslateService,) {
+              private translate: TranslateService,
+              settings: Settings) {
 
     /* 当storage准备就绪之后，判断 USER_INFO 中是否记录登录状态 */
     storage.ready().then(() => {
-      storage.get('USER_INFO').then(
-        (value: string) => {
+
+      settings.getValue("USER_INFO")
+        .then( (value)=>{
           let isRemember = !!value ? JSON.parse(value).isRemember : false;
           if (isRemember) {
             this.rootPage = TabsPage;
-          } else {
-            this.rootPage = 'TutorialPage';
+          }else{
+            this.rootPage = LoginPage;
           }
-        }
-      );
+        })
+        .catch((error) =>{
+          this.rootPage = 'TutorialPage';
+        });
+
     });
 
     platform.ready().then(() => {
@@ -65,7 +72,6 @@ export class MyApp {
       // 设置翻译
       this.translate.use('zh-cmn-Hans');
     }
-
   }
 
 }
