@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController, ToastController} from 'ionic-angular';
-import {Storage} from "@ionic/storage";
 import { TabsPage} from "../tabs/tabs";
+import {Settings} from "../../providers/utils/settings";
 
 @Component({
   selector: 'page-login',
@@ -16,7 +16,7 @@ export class LoginPage {
 
   constructor(public modalCtrl: ModalController,
               public toastCtrl: ToastController,
-              public storage: Storage) {
+              private settings: Settings) {
   }
 
   ionViewDidLoad() {
@@ -38,8 +38,7 @@ export class LoginPage {
     let data = {username: username.value, password: password.value, isRemember: this.isRemember};
 
     // 储存用户信息
-    this.storage.remove("USER_INFO");
-    this.storage.set("USER_INFO", JSON.stringify(data));
+    this.settings.setValue("USER_INFO", JSON.stringify(data));
 
     // 界面跳转
     let modal = this.modalCtrl.create(TabsPage, data);
