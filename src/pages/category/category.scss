@@ -1,0 +1,22 @@
+page-category {
+
+  .cate_content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    .cate_left {
+      width: 100px;
+      height: 100%;
+      overflow-y: auto;
+    }
+
+    .cate_right {
+      height: 100%;
+      flex: 1;
+      overflow-y: auto;
+
+    }
+  }
+
+}
