@@ -1,7 +1,5 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {CategoryPage} from "../category/category";
-import {CartPage} from "../cart/cart";
 
 @Component({
   selector: 'page-home',

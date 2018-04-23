@@ -2,19 +2,47 @@ page-category {
 
   .cate_content {
     width: 100%;
-    height: 100%;
+    height: 100%; /*首先看高度100% 是否管用  如果没有作用我们要给元素设置绝对定位*/
     display: flex;
 
     .cate_left {
       width: 100px;
       height: 100%;
+      border-right: 1rem solid #eee;
       overflow-y: auto;
-    }
+      color: #666;
 
+      ion-label {
+        font-size: 1.4rem;
+      }
+
+    }
     .cate_right {
       height: 100%;
       flex: 1;
       overflow-y: auto;
+      ion-label {
+        font-size: 1.4rem;
+      }
+
+      ion-col {
+        border: 0.05rem solid #eee;
+        margin-left: -0.05rem;
+        margin-top: -0.05rem;
+        p {
+          text-align: center;
+          color: #666;
+        }
+        img {
+          display: block;
+          margin: 0 auto;
+          max-width: 90%;
+        }
+      }
+
+      ion-col:nth-child(3n) {
+        border-right: 0px;
+      }
 
     }
   }
