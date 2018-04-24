@@ -53,6 +53,10 @@ export class HomePage {
     this.navCtrl.push(this.searchPage);
   }
 
+  openNavPage(item){
+    this.navCtrl.push(item.page).catch( (error) => {console.log(error)});
+  }
+
   private getHeaderSlideData() {
     return [
       {
@@ -83,58 +87,42 @@ export class HomePage {
       {
         alt: "分类查询",
         src: "assets/img/nav/nav0.png",
-        click: () => {
-          console.log("分类查询");
-        }
+        page: "CategoryPage",
       },
       {
         alt: "物流查询",
         src: "assets/img/nav/nav1.png",
-        click: () => {
-          console.log("物流查询");
-        }
+        page: "",
       },
       {
         alt: "购物车",
         src: "assets/img/nav/nav2.png",
-        click: () => {
-          console.log("购物车");
-        }
+        page: "CartPage",
       },
       {
         alt: "我的京东",
         src: "assets/img/nav/nav3.png",
-        click: () => {
-          console.log("我的京东");
-        }
+        page: "",
       },
       {
         alt: "充值",
         src: "assets/img/nav/nav4.png",
-        click: () => {
-          console.log("充值");
-        }
+        page: "",
       },
       {
         alt: "领券中心",
         src: "assets/img/nav/nav5.png",
-        click: () => {
-          console.log("分类查询");
-        }
+        page: "",
       },
       {
         alt: "我的审批",
         src: "assets/img/nav/nav6.png",
-        click: () => {
-          console.log("我的审批");
-        }
+        page: "",
       },
       {
         alt: "我的关注",
         src: "assets/img/nav/nav7.png",
-        click: () => {
-          console.log("我的关注");
-        }
+        page: "",
       }
     ];
   }

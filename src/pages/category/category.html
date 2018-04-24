@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      商品分类
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <div class="cate_content">
+    <div class="cate_left">
+      <ion-list>
+        <ion-item *ngFor="let item of cateList">
+          {{item}}
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <div class="cate_right">
+      <ion-row>
+        <ion-col col-4 *ngFor="let item of recList">
+          <img src="{{item.pic}}"  />
+          <p>{{item.title}}</p>
+        </ion-col>
+
+        <ion-col col-4 *ngFor="let item of recList">
+          <img src="{{item.pic}}"  />
+          <p>{{item.title}}</p>
+        </ion-col>
+      </ion-row>
+
+    </div>
+
+  </div>
+</ion-content>
