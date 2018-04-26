@@ -1,18 +1,72 @@
-<!--
-  Generated template for the CartPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>cart</ion-title>
+    <ion-title>购物车</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
 
+  <dl class="cart_list">
+    <dt>
+      <ion-checkbox color="danger"></ion-checkbox>
+      <img src="assets/img/homeImg/home-slide-03.jpg" />
+    </dt>
+
+    <dd>
+      <h2 class="cart_title">这是一个商品标题这是一个商品标题这是一个商品标题</h2>
+      <div class="cart_info">
+        <div class="cart_price">100元</div>
+
+        <div class="cart_num">
+          <div class="input_left">-</div>
+          <div class="input_center">
+            <input type="text" readonly="readonly" value="1" name="num" id="num" />
+          </div>
+          <div class="input_right">+</div>
+        </div>
+
+      </div>
+    </dd>
+  </dl>
+
+  <dl class="cart_list">
+    <dt>
+      <ion-checkbox color="danger"></ion-checkbox>
+      <img src="assets/img/homeImg/home-slide-05.jpg" />
+    </dt>
+
+    <dd>
+      <h2 class="cart_title">这是一个商品标题这是一个商品标题这是一个商品标题</h2>
+      <div class="cart_info">
+        <div class="cart_price">100元</div>
+
+        <div class="cart_num">
+          <div class="input_left">-</div>
+          <div class="input_center">
+            <input type="text" readonly="readonly" value="1" name="num" id="num" />
+          </div>
+          <div class="input_right">+</div>
+        </div>
+
+      </div>
+    </dd>
+  </dl>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+
+    <div class="all_price">
+      <ion-checkbox color="danger"></ion-checkbox>
+      全选
+      <strong>合计:2000元</strong>
+    </div>
+
+    <ion-buttons end>
+      <button ion-button color="danger">去结算</button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-footer>
