@@ -1,3 +1,89 @@
 page-cart {
+  .cart_list {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding: 0px .5rem;
+
+    dt {
+      width: 10rem; /*100px;*/
+      padding: 1rem 0px;
+      display: flex;
+      align-items: center;
+
+      ion-checkbox {
+        width: 2.8rem;
+        height: 2.8rem;
+      }
+
+      img {
+        flex: 1;
+        height: 6rem;
+        margin-right: .5rem;
+      }
+
+    }
+
+    dd {
+      flex: 1;
+
+      .cart_title {
+        font-size: 1.4rem;
+        padding: .5rem;
+        margin: 0px;
+      }
+
+      /*底部的价格  增加按钮*/
+      .cart_info {
+        display: flex;
+
+        .cart_price {
+          flex: 1;
+          line-height: 2.8rem;
+
+        }
+
+        .cart_num {
+          width: 100px;
+          display: flex;
+
+          .input_left, .input_right {
+            width: 2.8rem;
+            text-align: center;
+            height: 2.8rem;
+            line-height: 2.8rem;
+            border: 1px solid #eee;
+            background: #eee;
+          }
+          .input_center {
+            flex: 1;
+
+            input {
+              width: 100%;
+              height: 2.8rem;
+              border: 1px solid #eee;
+              text-align: center;
+            }
+          }
+        }
+
+      }
+
+    }
+  }
+
+  /*底部*/
+  .all_price {
+    height: 4.4rem;
+    line-height: 4.4rem;
+
+    ion-checkbox {
+      position: relative;
+      top: .2rem;
+    }
+
+    strong{
+      margin-left: 5px;
+    }
+  }
 
 }
