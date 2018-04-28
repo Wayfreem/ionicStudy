@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>销售排名</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <accordion-list [title]="'前十名'" textColor="#FFF" hasMargin="false" [expanded]="true">
+
+    <ion-list class="rank">
+      <ion-item>
+        <span class="text-rank">No.1</span>
+        <span class="text-center">墩和店</span>
+        <span item-end class="text-price">11111111</span>
+      </ion-item>
+    </ion-list>
+  </accordion-list>
+
+  <accordion-list [title]="'后十名'" textColor="#FFF" hasMargin="false" [expanded]="false">
+
+    <ion-list>
+      <ion-item>Terminator II</ion-item>
+      <ion-item>The Empire Strikes Back</ion-item>
+      <ion-item>Blade Runner</ion-item>
+    </ion-list>
+  </accordion-list>
+
+</ion-content>

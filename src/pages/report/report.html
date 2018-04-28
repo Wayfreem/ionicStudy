@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>报表</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <accordion-list *ngFor="let item of items; let index = index"
+                  [title]="item.name"
+                  textColor="#FFF"
+                  hasMargin="false"
+                  [expanded]="index === 0">
+
+    <ion-grid>
+      <ion-row>
+
+        <ion-col col-3 *ngFor="let data of item.data" (click)="openPage($event, data)">
+          <img src="{{data.src}}"/>
+          <div>{{data.title}}</div>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </accordion-list>
+
+
+</ion-content>
