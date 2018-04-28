@@ -105,9 +105,9 @@ export class HomePage {
         page: "",
       },
       {
-        alt: "充值",
+        alt: "报表管理",
         src: "assets/img/nav/nav4.png",
-        page: "",
+        page: "ReportPage",
       },
       {
         alt: "领券中心",
