@@ -12,6 +12,9 @@ export class SalesRankPage {
   topRankList: any[];
   lastRankList: any[];
 
+  targetAmount: number;
+  actualAmount: number;
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public httpClientService: HttpClientServiceProvider,
@@ -21,7 +24,7 @@ export class SalesRankPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad SalesRankPage');
     this.getRankData();
-    /* this.getMoneyData();*/
+    this.getMoneyData();
   }
 
   getRankData(){
@@ -43,7 +46,15 @@ export class SalesRankPage {
     this.httpClientService.post(url, {body: JSON.stringify({})}).subscribe(
       (resultData) => {
 
-        console.log(resultData);
+        if( resultData.success ){
+          const amountData = resultData.obj;
+          this.targetAmount = amountData.MDXSMB;
+          this.actualAmount =  Number(amountData.ALLMONEY) / 10000;
+        }else{
+          this.showMessage("查询数据失败");
+        }
+
+
       });
   }
 

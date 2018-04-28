@@ -8,7 +8,18 @@
 
 <ion-content padding>
 
-  <h2>月销售目标</h2>
+  <h5>本月销售目标为&nbsp;<strong class="red">1750.00</strong>&nbsp;万</h5>
+  <h6>
+    <div>
+      截止昨天已完成&nbsp;
+      <strong class="red">1230.49</strong>&nbsp;万
+    </div>
+
+    <div>
+      还差&nbsp;
+      <strong class="red">{{targetAmount - actualAmount | number:'1.2-2'}}</strong>&nbsp;万！
+    </div>
+  </h6>
 
   <accordion-list [title]="'前十名'" textColor="#FFF" hasMargin="false" [expanded]="true">
     <ion-list class="rank">
