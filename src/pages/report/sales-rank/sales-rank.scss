@@ -1,10 +1,18 @@
 page-sales-rank {
 
-  ion-list.rank{
+  span{
+    display: block;
+  }
 
-    text-center{
+  .rank{
+
+    .text-center{
       display: block;
       margin-left: 10px;
+    }
+
+    .text-price{
+      color: #e0d669;
     }
   }
 
