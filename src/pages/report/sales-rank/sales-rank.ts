@@ -2,13 +2,6 @@ import { Component } from '@angular/core';
 import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
 import {HttpClientServiceProvider} from "../../../providers/http-service/http-client-service";
 
-/**
- * Generated class for the SalesRankPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-sales-rank',

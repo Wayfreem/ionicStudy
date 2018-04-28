@@ -6,14 +6,16 @@
 
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+
+  <h2>月销售目标</h2>
 
   <accordion-list [title]="'前十名'" textColor="#FFF" hasMargin="false" [expanded]="true">
     <ion-list class="rank">
       <ion-item *ngFor="let item of topRankList; let i = index">
         <span class="text-rank">No.{{i+1}}</span>
         <span class="text-center">{{item.MDMC}}</span>
-        <span item-end class="text-price">{{item.FWXSJE}}</span>
+        <span item-end class="text-price">￥{{item.FWXSJE}}</span>
       </ion-item>
     </ion-list>
   </accordion-list>
@@ -23,7 +25,7 @@
       <ion-item *ngFor="let item of lastRankList; let i = index">
         <span class="text-rank">No.{{i+1}}</span>
         <span class="text-center">{{item.MDMC}}</span>
-        <span item-end class="text-price">{{item.FWXSJE}}</span>
+        <span item-end class="text-price">￥{{item.FWXSJE}}</span>
       </ion-item>
     </ion-list>
   </accordion-list>
