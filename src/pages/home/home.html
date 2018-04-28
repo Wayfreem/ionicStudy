@@ -42,7 +42,8 @@
           <li *ngFor="let item of recommendList">
 
             <img src="{{item.pic}}"/>
-            <p>{{item.title}}</p>
+            <div class="floor-detail-text">{{item.title}}</div>
+            <p><span class="price">¥{{item.price}}</span></p>
           </li>
         </ul>
       </ion-scroll>
@@ -57,12 +58,20 @@
       <ion-row>
         <ion-col col-6>
           <img src="assets/img/homeImg/home-slide-06.jpg"/>
-          <p>XXX</p>
+          <div class="floor-product-detail">暗影精灵III代 15.6英寸游戏笔记本电脑</div>
+          <p>
+            <span class="floor-product-price">¥12000</span>
+            <span class="floor-product-price-old">¥11800</span>
+          </p>
         </ion-col>
 
         <ion-col col-6>
           <img src="assets/img/homeImg/home-slide-07.jpg"/>
-          <p>XXX</p>
+          <div class="floor-product-text">联想(Lenovo)拯救者R720 15.6英寸游戏笔记本电脑</div>
+          <p>
+            <span class="floor-product-price">¥12000</span>
+            <span class="floor-product-price-old">¥11800</span>
+          </p>
         </ion-col>
       </ion-row>
     </div>
@@ -76,12 +85,20 @@
       <ion-row>
         <ion-col col-6>
           <img src="assets/img/homeImg/home-slide-08.jpg"/>
-          <p>手机</p>
+          <div class="floor-product-detail">小米 红米5A 全网通版 2GB+16GB 香槟金</div>
+          <p>
+            <span class="floor-product-price">¥2000</span>
+            <span class="floor-product-price-old">¥1800</span>
+          </p>
         </ion-col>
 
         <ion-col col-6>
           <img src="assets/img/homeImg/home-slide-09.jpg"/>
-          <p>手机</p>
+          <div class="floor-product-detail">小米 红米5A 全网通版 2GB+16GB 香槟金</div>
+          <p>
+            <span class="floor-product-price">¥2000</span>
+            <span class="floor-product-price-old">¥1800</span>
+          </p>
         </ion-col>
       </ion-row>
     </div>

@@ -133,7 +133,8 @@ export class HomePage {
 
       list.push({
         pic:'assets/img/homeImg/home-slide-0'+i+'.jpg',
-        title:'第'+i+'条'
+        title:'第'+i+'条',
+        price: Math.round(Math.random() * 1000)
       });
     }
     return list;
