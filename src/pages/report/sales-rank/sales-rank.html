@@ -8,11 +8,11 @@
 
 <ion-content padding>
 
-  <h5>本月销售目标为&nbsp;<strong class="red">1750.00</strong>&nbsp;万</h5>
+  <h5>本月销售目标为&nbsp;<strong class="red">{{targetAmount | number: '1.2-2'}}</strong>&nbsp;万</h5>
   <h6>
     <div>
       截止昨天已完成&nbsp;
-      <strong class="red">1230.49</strong>&nbsp;万
+      <strong class="red">{{actualAmount | number: '1.2-2'}}</strong>&nbsp;万
     </div>
 
     <div>
