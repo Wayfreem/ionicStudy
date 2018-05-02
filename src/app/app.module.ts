@@ -25,6 +25,7 @@ import {ConfigProvider} from '../providers/config/config';
 import {HttpServiceProvider} from "../providers/http-service/http-service";
 import {CameraProvider} from "../providers/utils/camera.provider";
 import {Settings} from "../providers/utils/settings";
+/*import {BarcodeScanner} from "@ionic-native/barcode-scanner";*/
 
 const PROVIDERS = [
   // 自定义模块
@@ -37,6 +38,7 @@ const PROVIDERS = [
 
   // Ionic native specific providers
   Camera,
+ /* BarcodeScanner,*/
 ];
 
 // 设置翻译文件的路径

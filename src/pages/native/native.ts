@@ -23,7 +23,7 @@ export class NativePage {
 
     this.items = [
       {
-        title: 'Barcode scan',
+        title: '扫描二维码',
         page: 'BarcodeScannerPage'
       },
       {
