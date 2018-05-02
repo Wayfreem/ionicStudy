@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Events, IonicPage, NavController, NavParams} from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -8,16 +8,30 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MessagePage {
 
+  messageTabBadge: number = 0;
+
   messageList = [];
   items = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public events: Events) {
+
+    setTimeout(()=>{
+      this.changeMessageTabBadge();
+    }, 5000);
 
   }
 
   ionViewDidLoad() {
     this.messageList = this.getMessage();
     this.items = this.getAccordionList();
+  }
+
+  changeMessageTabBadge(){
+    this.messageTabBadge = 20;
+
+    this.events.publish('messageTabBadge:change',this.messageTabBadge, Date.now());
   }
 
   getMessage() {

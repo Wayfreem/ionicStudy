@@ -2,7 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import {ContactPage} from '../contact/contact';
 import {MessagePage} from "../message/message";
 import {HomePage} from '../home/home';
-import {NavParams, Platform, Tabs} from 'ionic-angular';
+import {Events, NavParams, Platform, Tabs} from 'ionic-angular';
 import {BackButtonServiceProvider} from "../../providers/utils/back-button-service";
 
 @Component({
@@ -11,7 +11,8 @@ import {BackButtonServiceProvider} from "../../providers/utils/back-button-servi
 export class TabsPage {
 
   @ViewChild('myTabs') tabRef: Tabs;
-  @ViewChild('messageTabs') messageTabs: MessagePage;
+
+  messageTabBadge: number = 0;
 
   tab1Root = HomePage;
   tab2Root = MessagePage;
@@ -20,11 +21,17 @@ export class TabsPage {
 
   constructor(public navParams: NavParams,
               public platform: Platform,
-              public backButtonService: BackButtonServiceProvider) {
+              public backButtonService: BackButtonServiceProvider,
+              public events: Events) {
 
     platform.ready().then(() => {
       this.backButtonService.registerBackButtonAction(this.tabRef);
     });
+
+    this.events.subscribe('messageTabBadge:change', (number)=>{
+      console.log("------------->");
+      this.messageTabBadge = number;
+    })
   }
 
   ionViewDidLoad() {
