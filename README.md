@@ -10,6 +10,7 @@
   <li>封装出accordion组件</li>
   <li>引入crypto-js 加密包</li>
   <li>Http 以及 http client 两种调用方式</li>
+  <li>集成 i18n 使用 ngx-translate/core</li>
 </ul>
 
 # 安装方式
@@ -23,11 +24,11 @@
     step 2：
     npm `i` or `npm install`, download the package
 
-    // 项目上面使用到了 camera
     step 3：
+    // 项目上面使用到了 camera
     - ionic cordova plugin add cordova-plugin-camera
     - npm install --save @ionic-native/camera
-
+    
     step 4：
     `ionic serve`, run this app
 

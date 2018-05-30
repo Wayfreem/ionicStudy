@@ -48,6 +48,11 @@ export class ReportPage {
         data: [
           {
             src: "assets/img/contact/common-01.png",
+            title:"图标例子界面",
+            page:"ReportDemoPage"
+          },
+          {
+            src: "assets/img/contact/common-01.png",
             title:"销售排名",
             page:"SalesRankPage"
           },
