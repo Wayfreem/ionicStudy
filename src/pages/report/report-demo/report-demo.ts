@@ -33,21 +33,24 @@ export class ReportDemoPage {
   }
 
   ngAfterViewInit() {
+
     setTimeout(() => {
       this.barChart = this.getBarChart();
       this.doughnutChart = this.getDoughnutChart();
       this.halfDoughnutChart = this.getHalfDoughnutChart();
     }, 150);
-   /* setTimeout(() => {
+
+    setTimeout(() => {
       this.lineChart = this.getLineChart();
       this.radarChart = this.getRadarChart();
       this.polarAreaChart = this.getPolarAreaChart();
     }, 250);
+
     setTimeout(() => {
       this.bubbleChart = this.getBubbleChart();
       this.mixedChart = this.getMixedChart();
       this.pieChart = this.getPieChart();
-    }, 350);*/
+    }, 350);
 
   }
 
