@@ -1,6 +1,15 @@
 
 <ion-content id="home">
 
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="下拉更新"
+      refreshingSpinner="circles"
+      refreshingText="更新中...">
+    </ion-refresher-content>
+  </ion-refresher>
+
   <!--搜索框-->
   <div class="header-search">
     <div #headerSearch class="header-search-bgColor"></div>

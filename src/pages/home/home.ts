@@ -57,6 +57,12 @@ export class HomePage {
     this.navCtrl.push(item.page).catch( (error) => {console.log(error)});
   }
 
+  doRefresh(refresher){
+    setTimeout(() => {
+      refresher.complete(); //当数据请求完成调用
+    }, 2000);
+  }
+
   private getHeaderSlideData() {
     return [
       {
