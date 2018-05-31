@@ -54,7 +54,13 @@ export class ReportDemoPage {
 
   }
 
-
+  /**
+   * 生成图表的公共方法
+   * @param context 渲染的dom对象
+   * @param chartType 生成图表的类型
+   * @param data  生成图表的数据
+   * @param options 生成图表的个性化参数
+   */
   getChart(context, chartType, data, options?) {
     return new chartJs(context, {
       data,
