@@ -18,13 +18,13 @@ import {HomePage} from '../pages/home/home';
 import {TabsPage} from '../pages/tabs/tabs';
 import {LoginPage} from "../pages/login/login";
 import {MessagePageModule} from "../pages/message/message.module";
-import {ComponentsModule} from "../components/components.module";
 import {HttpClientServiceProvider} from '../providers/http-service/http-client-service';
 import {BackButtonServiceProvider} from '../providers/utils/back-button-service';
 import {ConfigProvider} from '../providers/config/config';
 import {HttpServiceProvider} from "../providers/http-service/http-service";
 import {CameraProvider} from "../providers/utils/camera.provider";
 import {Settings} from "../providers/utils/settings";
+import { SharedModule } from './shared.module';
 /*import {BarcodeScanner} from "@ionic-native/barcode-scanner";*/
 
 const PROVIDERS = [
@@ -55,9 +55,6 @@ export function createTranslateLoader(http: HttpClient) {
     LoginPage,
   ],
   imports: [
-    // 自定义组件
-    ComponentsModule,
-
     // 自定义模块
     MessagePageModule,
 
@@ -76,7 +73,9 @@ export function createTranslateLoader(http: HttpClient) {
       tabsHideOnSubPages: 'true',  // 隐藏全部子页面 tabs
       // backButtonText: '返回',     修改返回按钮
       monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],  // 全局配置日期的月份名称
-    })
+    }),
+
+    SharedModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
