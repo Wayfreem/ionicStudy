@@ -1,0 +1,69 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>聊天</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="chats">
+
+  <ion-list>
+    <ion-list-header>今天</ion-list-header>
+
+    <ion-item *ngFor="let chat of chats" (click)="viewMessages(chat)">
+      <ion-avatar item-start>
+        <img [src]="chat.imageUrl">
+      </ion-avatar>
+      <h2>{{chat.title}}</h2>
+      <p>{{chat.lastMessage}}</p>
+      <ion-note item-end>{{chat.timestamp | date:'HH:mm:ss'| lowercase}}</ion-note>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>昨天</ion-list-header>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/img/avatar/marty-avatar.png">
+      </ion-avatar>
+      <h2>大逼哥</h2>
+      <p>拉萨挺不错的。。。。</p>
+      <ion-note item-end>11:11</ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/img/avatar/marty-avatar.png">
+      </ion-avatar>
+      <h2>人事主管</h2>
+      <p>这次给你涨工资了。你查看下工资白条</p>
+      <ion-note item-end>11:11</ion-note>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-list>
+    <ion-list-header>前天</ion-list-header>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/img/avatar/ian-avatar.png">
+      </ion-avatar>
+      <h2>祥</h2>
+      <p>下次我请客吃饭。。。。</p>
+      <ion-note item-end>11:11</ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/img/avatar/marty-avatar.png">
+      </ion-avatar>
+      <h2>涛</h2>
+      <p>什么时候回武汉？</p>
+      <ion-note item-end>11:11</ion-note>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
