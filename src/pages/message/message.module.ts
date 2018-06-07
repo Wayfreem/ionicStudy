@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { MessagePage } from './message';
-import {ComponentsModule} from "../../components/components.module";
+import {SharedModule} from "../../app/shared.module";
 
 @NgModule({
   declarations: [
@@ -12,7 +12,7 @@ import {ComponentsModule} from "../../components/components.module";
   ],
   imports: [
     IonicPageModule.forChild(MessagePage),
-    ComponentsModule,
+    SharedModule,
   ],
 })
 export class MessagePageModule {}
