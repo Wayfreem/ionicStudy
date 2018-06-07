@@ -14,6 +14,7 @@ export class SettingPage {
   modalPage = 'ModalPage';
   ApprovalPage = 'ApprovalPage';
   NativePage = 'NativePage';
+  ChatPage = 'ChatPage';
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -48,6 +49,10 @@ export class SettingPage {
 
   _navToNative(){
     this.navCtrl.push(this.NativePage);
+  }
+
+  _navToChat(){
+    this.navCtrl.push(this.ChatPage);
   }
 
 
