@@ -8,9 +8,10 @@
   <li>首页的轮播图效果</li>
   <li>实现记住密码功能</li>
   <li>封装出accordion组件</li>
-  <li>引入crypto-js 加密包</li>
+  <li>引入 crypto-js 加密包</li>
   <li>Http 以及 http client 两种调用方式</li>
   <li>集成 i18n 使用 ngx-translate/core</li>
+  <li>集成 chartjs 图标显示插件</li>
 </ul>
 
 # 安装方式
