@@ -12,6 +12,7 @@
   <li>Http 以及 http client 两种调用方式</li>
   <li>集成 i18n 使用 ngx-translate/core</li>
   <li>集成 chartjs 图标显示插件</li>
+  <li>完成聊天界面的开发（静态页面）</li>
 </ul>
 
 # 安装方式
