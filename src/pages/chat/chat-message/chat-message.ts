@@ -135,4 +135,8 @@ export class ChatMessagePage {
     }, 100);
   }
 
+  viewProfile(message: string){
+    console.log(message);
+  }
+
 }

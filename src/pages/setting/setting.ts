@@ -51,9 +51,4 @@ export class SettingPage {
     this.navCtrl.push(this.NativePage);
   }
 
-  _navToChat(){
-    this.navCtrl.push(this.ChatPage);
-  }
-
-
 }

@@ -106,9 +106,9 @@ export class HomePage {
         page: "CartPage",
       },
       {
-        alt: "我的京东",
+        alt: "我的消息",
         src: "assets/img/nav/nav3.png",
-        page: "",
+        page: "ChatPage",
       },
       {
         alt: "报表管理",
@@ -126,7 +126,7 @@ export class HomePage {
         page: "",
       },
       {
-        alt: "我的关注",
+        alt: "我的收藏",
         src: "assets/img/nav/nav7.png",
         page: "",
       }
