@@ -31,13 +31,6 @@
 
   <ion-card>
     <ion-card-header>
-      http
-    </ion-card-header>
-    {{ httpData | json }}
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
       httpClient with sign
     </ion-card-header>
     {{ newERPData | json }}
@@ -45,10 +38,6 @@
 
   <div padding>
     <button ion-button block (click)="getHttpData()">获取数据 httpClient</button>
-  </div>
-
-  <div padding>
-    <button ion-button block (click)="_login()">登录本类方法 http</button>
   </div>
 
   <div padding>
